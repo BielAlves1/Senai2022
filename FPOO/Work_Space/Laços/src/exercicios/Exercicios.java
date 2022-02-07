@@ -7,7 +7,7 @@ public class Exercicios {
 
 	public static void main(String[] args) throws IOException {
 		Scanner sc = new Scanner(System.in);
-		int a, b;
+		int a, b, cont = 0;
 		
 		int menu = 0;
 		while(menu != 11) {
@@ -28,8 +28,8 @@ public class Exercicios {
 				break;
 			case 3:
 				System.out.println("Digite um valor inteiro:");
-				int valor = sc.nextInt();
-				for (int i = 0; i < valor; i++) {
+				a = sc.nextInt();
+				for (int i = 0; i < a; i++) {
 					System.out.println(i);
 				}
 				break;
@@ -56,22 +56,61 @@ public class Exercicios {
 				 }
 				break;
 			case 6:
-				System.out.println("");
+				for(int i = 0; i <= 100; i++) {
+		            cont += i;
+		            System.out.println(cont);
+				}
+				
 				break;
 			case 7:
-				System.out.println("");
+				System.out.print("Digite o primeiro valor inteiro: ");
+				a = sc.nextInt();
+				System.out.println("Digite o segundo valor inteiro: ");
+				b = sc.nextInt();
+				if(a < b) {
+					for(int i = a; i <= b; i++) {
+			            cont += i;
+			            System.out.println(cont);
+					}
+				}else {
+					for(int i = b; i >= b; i++) {
+			            cont += i;
+			            System.out.println(cont);
+					}
+				}
 				break;
 			case 8:
-				System.out.println("");
+				System.out.print("Digite o primeiro valor inteiro: ");
+				a = sc.nextInt();
+				System.out.println("Digite o segundo valor inteiro: ");
+				b = sc.nextInt();
+				for(int i = a; i <= b; i++) {
+		            cont += i;
+		            if(cont % 2 == 0) {
+		            	System.out.println(cont);
+		            }
+		            
+				}
 				break;
 			case 9:
-				System.out.println("");
+				for(int i = 1; i <= 15; i++) {
+					System.out.printf("Digite o %d° valor inteiro: ", i);
+					cont += sc.nextInt();
+				}
+				System.out.println(cont);
+				
 				break;
 			case 10:
-				System.out.println("");
+				for(int i = 11; i <= 250; i++) {
+					if(i % 2 == 0) {
+						System.out.println(i);
+					}
+				}
+				
+		
 				break;
 			case 11:
-				System.out.println("Shazam Karai!");
+				System.out.println("SHAZAM KARAI!");
 				break;
 			default:
 				System.out.println("Opção Inválida.");
