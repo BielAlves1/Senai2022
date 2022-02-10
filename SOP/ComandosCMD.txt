@@ -1,0 +1,16 @@
+Dir - Listar
+Tree - Listagem de caminhos de pastas
+MD - Criar
+RD - Exclui se vazia
+echo - Escreve no arquivo
+del - Exclui arquivos
+copy - Copia
+move - Movimenta
+cls - apagar histórico de comandos no cmd
+
+-Menos		________
+/Barra			|
+\Barra Invertida	|
+.. Ponto Ponto		| Sempre há um espaço antes
+> Salvar		|
+		________|

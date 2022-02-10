@@ -1,6 +1,6 @@
 body{
 	background-image: url(./img/back.png);
-	background-attachment: fixed;
+	background-attachment: local;
 }
 img{
 	height:350px;
