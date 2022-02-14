@@ -1,0 +1,43 @@
+body{
+	background-image: url(./img/back.png);
+	background-repeat: no-repeat, repeat;
+}
+img{
+	height:375px;
+	width:450px;
+}
+button{
+	height: 30px;
+	border: none;
+	width: 200px;
+	background-color: black;
+	color:white;
+	
+}
+button:hover{
+	background-color: red;
+	color: white;
+}
+table{
+	background-color: gray;
+	color: white;
+}
+.foot{
+    bottom: 0;
+    idth: 100%;
+    background-color: black;
+    margin: 0;
+    text-align: center;
+	padding-top: 5vh;
+    padding-bottom: 5vh;
+    color: white;
+    font-size: 1.25rem;
+}
+.foot:hover{
+	background-color: red;
+	color: white;
+}
+.h img{
+	width:550; 
+	height:350;
+}

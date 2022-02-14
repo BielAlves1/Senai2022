@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>HunterxHunter</title>
+		<link rel="stylesheet" type="text/css" href="../estilo.css" />
+	</head>
+	<body>
+	<table align="center" width="450px">
+		<thead>
+			<tr>
+				<td align="center">Hunter x Hunter</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><img src="../img/hunter.jpg"/></td>
+			</tr>
+			<tr>
+				<td align="center">
+					<p>
+					A série conta a história de Gon Freecss, um garoto de 12 anos que pretende se tornar um Hunter, uma profissão de caçador de tesouros, 
+					lugares perdidos e criaturas estranhas.
+					Contudo, ao contrário da maioria dos Hunters que procuram fama e dinheiro, o herói da história tem uma
+					motivação maior para querer ser um caçador(Encontrar seu pai – 
+					um dos mais famosos hunters do mundo e desvabrar um mundo em uma aventura).
+					Mas não é qualquer um que pode se tornar um Hunter. Para poder praticar essa 
+					reconhecida profissão, é necessário ter uma licença especial e 
+					para tirá-la é preciso passar e sobreviver aos exames hunters com milhares de inscritos. 
+					Uma vez aprovado e com sua licença Hunter em mãos, o caçador passa a ter direito a acessar áreas restritas, 
+					informações secretas e consegue acumular facilmente uma grande fortuna de acordo com seus feitos, incluindo ir
+					atrás de Hunters que usam seus poderes para objetivos escuros.
+					</p>
+				</td>
+			</tr>
+		</tbody>
+		</table><br/>
+		<p style="width: 100%; text-align: center;">
+			<a href="..\index.html"><button type="button">Voltar para Home</button></a>
+			<a href="..\.\pag2\fm.html"><button type="button">Ir para próxima Página</button></a><br/>
+		</p>
+		<p class="foot">
+        Gabriel Alves Sousa Silva | Senai - 2022
+		</p>
+	</body>
+</html>
