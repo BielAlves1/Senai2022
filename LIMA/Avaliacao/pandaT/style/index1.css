@@ -1,0 +1,21 @@
+body{
+	background-color: #F8CBf8;
+}
+button{
+	height: 30px;
+	border: 2;
+	width: 125px;
+}
+button:hover{
+	background-color: lightpink;
+	color: white;
+}
+img {
+	height: 70px;
+	width: 130px;
+	width: 130px;
+}
+.panda {
+	height: 350px;
+	width: 600px;
+}
