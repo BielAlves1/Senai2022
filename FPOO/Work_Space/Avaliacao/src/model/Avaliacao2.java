@@ -53,24 +53,24 @@ public class Avaliacao2 {
 		int size = 6;
 		
 		String[] escolas = new String[size];
-		int[] pontosB = new int[size];
-		int[] pontosS = new int[size];
-		int[] pontosF = new int[size];
-		int[] media = new int[size];
+		float[] pontosB = new float[size];
+		float[] pontosS = new float[size];
+		float[] pontosF = new float[size];
+		float[] media = new float[size];
 		
 		for(int i = 1; i < size; i++) {
 			System.out.println("Nome da[" + i + "°] escola: ");
 			escolas[i] = sc.next();
 			System.out.println("Pontos de Bateria de 0 a 10: ");
-			pontosB[i] = sc.nextInt();
+			pontosB[i] = sc.nextFloat();
 			System.out.println("Pontos de Samba-Enredo de 0 a 10: ");
-			pontosS[i] = sc.nextInt();
+			pontosS[i] = sc.nextFloat();
 			System.out.println("Pontos de Fantasias de 0 a 10: ");
-			pontosF[i] = sc.nextInt();
-			media[i] = pontosB[i] + pontosS[i] + pontosF[i] / 3; 
+			pontosF[i] = sc.nextFloat();
+			media[i] = (pontosB[i] + pontosS[i] + pontosF[i]) / 3; 
 		}
 		for(int i = 1; i < size; i++) {
-			System.out.println("Escola " +escolas[i]+ " com média de pontos: "+media[i]);
+			System.out.printf("Escola "+ escolas[i] +" com média de pontos: %.1f\n",media[i]);
 		}
 			if (media[1] > media[2] && media[1] > media[3] && media[1] > media[4] && media[1] > media[5]) {
 				System.out.println("Escola " +escolas[1]+ " é a campeã");
