@@ -7,7 +7,6 @@ public class Avaliacao2 {
 
 	public static Scanner sc = new Scanner(System.in);
 	public static void main(String[] args) throws IOException {
-		Scanner sc = new Scanner(System.in);
 		
 		int menu = 0;
 		while(menu != 5) {
@@ -86,28 +85,60 @@ public class Avaliacao2 {
 				System.out.println("Empate.");
 			}
 	}
-	public static void materiasP() {
-		System.out.println("|Matérias Primas|");
-		float peso, valorE, valorLan, valorP, valorS;
+	public static void calcularMateriasPrimas() {
 		
-		System.out.println("Digite o peso em KG dos materiais: ");
-		peso = sc.nextFloat();
-		System.out.println("Digite o valor estimado que quer gastar: ");
-		valorE = sc.nextFloat();
-		System.out.println("Digite o valor das lantejoulas: ");
-		valorLan = sc.nextFloat();
-		System.out.println("Digite o valor das Penas de Avestruz do Himalaia: ");
-		valorP = sc.nextFloat();
-		System.out.println("Digite o valor da Seda Húngara");
-		valorS = sc.nextFloat();
+		String[] vetor_materias_primas = new String[3];
+		vetor_materias_primas[0] = "Lantejoulas";
+		vetor_materias_primas[1] = "Penas de Avestruz";
+		vetor_materias_primas[2] = "Tecido de seda";
 		
-		float valorTotal = valorLan + valorP + valorS;
-		System.out.printf("Total de R$%.2f\n", valorTotal);
-		if(valorTotal>valorE) {
-			System.out.println("O valor passa do estimado.");
-		} else {
-			System.out.println("Está dentro do orçamento.");
+		Double[] valor_gasto = new Double[3];
+		Double[] valor_estimado = new Double[3];
+		int[] kg = new int[3];
+		
+		for(int i = 0; i < vetor_materias_primas.length; i++) {
+			System.out.println(
+					"Valor gasto do material " + vetor_materias_primas[i] + ": ");
+			valor_gasto[i] = sc.nextDouble();
+			
+			System.out.println("Valor estimado do material " + vetor_materias_primas[i] + ": ");
+			valor_estimado[i] = sc.nextDouble();
+			
+			System.out.println("Quantidade em quilos do material " + vetor_materias_primas[i] + ": ");
+			kg[i] = sc.nextInt();
 		}
+		
+		double maior_gasto = 0.0;
+		int index_maior_gasto = 0;
+		int index_menor_gasto = 0;
+		int index_medio_gasto = 0;
+		for(int i = 0; i< vetor_materias_primas.length; i++) {
+			
+			if(valor_gasto[i] > maior_gasto) {
+				maior_gasto = valor_gasto[i];
+				index_maior_gasto = i;
+			}else if(maior_gasto > valor_gasto[0] && maior_gasto > valor_gasto[1] && maior_gasto > valor_gasto[2]) {
+				index_maior_gasto = i;
+			}else if(maior_gasto < valor_gasto[1] && maior_gasto > valor_gasto[2]) {
+				index_medio_gasto = 1;
+			}else if(maior_gasto < valor_gasto[0] && maior_gasto < valor_gasto[1] && maior_gasto < valor_gasto[2]) {
+				index_menor_gasto = 2;
+			}
+			
+			
+			if(valor_gasto[i] > valor_estimado[i]) {
+				System.out.println("A relação kg/R$ do material " + vetor_materias_primas[i] + " é: " + (kg[i]/valor_gasto[i]));
+				System.out.println("O valor gasto do material " + vetor_materias_primas[i] + " foi maior que o valor estimado.");
+			}else if(valor_gasto[i] < valor_estimado[i]) {
+				System.out.println("A relação kg/R$ do material " + vetor_materias_primas[i] + " é: " + (kg[i]/valor_gasto[i]));
+				System.out.println("O valor gasto do material " + vetor_materias_primas[i] + " foi menor que o estimado");
+			}else {
+				System.out.println("A relação kg/R$ do material " + vetor_materias_primas[i] + " é: " + (kg[i]/valor_gasto[i]));
+				System.out.println("O valor gasto do material " + vetor_materias_primas[i] + " foi igual");
+			}
+		}
+		
+		System.out.println("O maior gasto, se encontra no material: " + vetor_materias_primas[index_maior_gasto]);
 	}
 	public static void bloco() {
 		System.out.println("|Bloco|");

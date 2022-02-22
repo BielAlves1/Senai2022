@@ -27,6 +27,8 @@ public class Lista {
 		}
 	}
 	public static void leVetor() {
-		
+	
+			
+		}
 	}
-}
+
