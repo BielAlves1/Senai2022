@@ -23,7 +23,7 @@ public class Cama {
 				System.out.println("Flw Mermão!");
 				break;
 			default:
-				System.out.println("Presta atenção seu primata!\n");
+				System.out.println("Presta atenção seu primata!");
 			}
 		}
 	}

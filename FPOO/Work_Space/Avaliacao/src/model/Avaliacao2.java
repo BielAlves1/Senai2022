@@ -85,7 +85,7 @@ public class Avaliacao2 {
 				System.out.println("Empate.");
 			}
 	}
-	public static void calcularMateriasPrimas() {
+	public static void materiasP() {
 		
 		String[] vetor_materias_primas = new String[3];
 		vetor_materias_primas[0] = "Lantejoulas";
@@ -174,7 +174,7 @@ public class Avaliacao2 {
 		opcoesV[1] = "2. |Apuração|";
 		opcoesV[2] = "3. |Matérias Primas|";
 		opcoesV[3] = "4. |Bloco|";
-		opcoesV[4] = "5. |Apuração|";
+		opcoesV[4] = "5.  Sair";
 		
 		for(int i = 0; i < opcoesV.length; i++) {
 			System.out.println(opcoesV[i]);
