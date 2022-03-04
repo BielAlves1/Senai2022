@@ -26,15 +26,23 @@ body{
     width: 20px;
 }
 .menu{
-    
+   
 }
 .content{
     color: white;
     display: flex;
     align-items: center;
+    margin-top: 10%;
 }
 .content2{
     color: white;
 }
 .subMenu{
+    margin-top: 0%;
+}
+.span2{
+    margin-bottom: 35%;
+}
+.opcoes{
+    margin-bottom: 220%;
 }

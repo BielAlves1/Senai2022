@@ -10,20 +10,20 @@ public class Cama {
 		
 		int menu = 0;
 		while(menu != 3) {
-			System.out.println("1.Coisa\n2.E tal\n3.Sair\nEscolha:");
+			System.out.println("");
 			menu = sc.nextInt();
 			switch(menu) {
 			case 1:
-				System.out.println("Aee, vc escolheu \"Coisa\"\n");
+				System.out.println("");
 				break;
 			case 2:
-				System.out.println("Aee, vc escolheu \"E tal\"\n");
+				System.out.println("");
 				break;
 			case 3:
-				System.out.println("Flw Mermão!");
+				System.out.println("");
 				break;
 			default:
-				System.out.println("Presta atenção seu primata!");
+				System.out.println("Opção Inválida.");
 			}
 		}
 	}
