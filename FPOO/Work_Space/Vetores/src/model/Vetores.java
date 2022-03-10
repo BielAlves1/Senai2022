@@ -6,282 +6,39 @@ import java.util.Arrays;
 
 public class Vetores {
 
+	static Scanner sc = new Scanner(System.in);
+	static int[] num =  new int[10];
+	static int[] num2 =  new int[10];
+	static double[] numeros = new double[10];
+	static String[] c = new String[10];
+	static int size;
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
 		
 		int menu = 0;
 		while(menu != 8) {
-			System.out.println("1 - Ex1\n2 - Ex2\n3 - Ex3\n4 - Ex4\n5 - Ex5\n6 - Ex6\n7 - Ex7\\n8 - Sair");
+			System.out.println("\n1 - Ex1\n2 - Ex2\n3 - Ex3\n4 - Ex4\n5 - Ex5\n6 - Ex6\n7 - Ex7\\n8 - Sair");
 			menu = sc.nextInt();
 			switch(menu) {
 			case 1:
-				int[] nums =  new int[10];
-				
-				for (int i = 0; i < nums.length; i++) {
-					System.out.println("Digite um número inteiro");
-					nums[i] = s.nextInt();
-				}
-				
-				System.out.println("\n\nOrdem normal:");
-				
-				for (int i = 0; i < nums.length; i++) {
-					System.out.print(nums[i] + " ");
-				}
-				
-				System.out.println("\n\nOrdem inversa:");
-				
-				for (int i = nums.length - 1; i >= 0 ; i--) {
-					System.out.print(nums[i] + " ");
-				}
-				
+				ex1();
 				break;
-				
 			case 2:
-				
-				int[] nums1 =  new int[10];
-				int[] nums2 =  new int[10];
-				
-				for (int i = 0; i < nums1.length; i++) {
-					System.out.println("Digite um número inteiro");
-					nums1[i] = s.nextInt();
-				}
-				
-				for (int i = nums1.length - 1; i >= 0 ; i--) {
-					nums2[9-i] = nums1[i];
-				}
-				
-				System.out.println("\nVetor 1:");
-				
-				for (int i = 0; i < nums1.length; i++) {
-					System.out.print(nums1[i] + " ");
-				}
-				
-				System.out.println("\nVetor 2:");
-				
-				for (int i = 0; i < nums2.length; i++) {
-					System.out.print(nums2[i] + " ");
-				}
-				
+				ex2();
 				break;
-				
 			case 3:
-				
-				int[] valores1 = new int[10];
-				double[] valores2 = new double[10];
-				
-				for (int i = 0; i < valores1.length; i++) {
-					do {
-						System.out.println("Digite um número inteiro e positivo:");
-						valores1[i] = s.nextInt();
-						
-						if (valores1[i] <= 0) {
-							System.out.println("Número inválido");
-						}
-					} while(valores1[i] <= 0);
-				}
-				
-				for (int i = 0; i < valores1.length; i++) {
-					if (i % 2 == 0) {
-						valores2[i] = (double) valores1[i] / 2;
-					} else {
-						valores2[i] = (double) valores1[i] * 3;
-					}
-				}
-				
-				System.out.println("\nVetor 1:");
-				
-				for (int i = 0; i < valores1.length; i++) {
-					System.out.print(valores1[i] + " ");
-				}
-				
-				System.out.println("\nVetor 2:");
-				
-				for (int i = 0; i < valores2.length; i++) {
-					System.out.print(valores2[i] + " ");
-				}
-				
+				ex3();
 				break;
-				
 			case 4:
-				
-				String[] c = new String[10];
-				
-				for (int i = 0; i < c.length; i++) {
-					System.out.println("Digite um nome");
-					c[i] = s.next();
-				}
-				
-				System.out.println("\nDigite um nome para ser buscado");
-				String nome = s.next();
-				boolean achou = false;
-				for (int i = 0; i < c.length; i++) {
-					if (c[i].equals(nome)) {
-						System.out.println("ACHEI");
-						achou = true;
-					}
-				}
-				
-				if (!achou) {
-					System.out.println("NÃO ACHEI");
-				}
-				
+				ex4();
 				break;
-				
 			case 5:
-				
-				int[] v1 = new int[20];
-				int[] v2 = new int[20];
-				int[] v3 = new int[20];
-				int[] v4 = new int[20];
-				int[] v5 = new int[20];
-				
-				System.out.println("Vetor 1:");
-				
-				for (int i = 0; i < 20; i++) {
-					System.out.println("Digite um número inteiro");
-					v1[i] = s.nextInt();
-				}
-				
-				System.out.println("\nVetor 2:");
-				
-				for (int i = 0; i < 20; i++) {
-					System.out.println("Digite um número inteiro");
-					v2[i] = s.nextInt();
-				}
-				
-				
-				
-				System.out.println("\nVetor 3:");
-				
-				for (int i = 0; i < 20; i++) {
-					
-					v3[i] = v2[i] - v1[i];
-					System.out.print(v3[i] + " ");
-				}
-				
-				System.out.println("\nVetor 4:");
-				
-				for (int i = 0; i < 20; i++) {
-					
-					v4[i] = v2[i] + v1[i];
-					System.out.print(v4[i] + " ");
-				}
-				
-				System.out.println("\nVetor 5:");
-				
-				for (int i = 0; i < 20; i++) {
-					
-					v5[i] = v2[i] * v1[i];
-					System.out.print(v5[i] + " ");
-				}
-				
+				ex5();
 				break;
-				
 			case 6:
-				
-				System.out.println("Digite quantos números deseja inserir no vetor");
-				int qtde = s.nextInt();
-				
-				int[] vec = new int[qtde];
-				
-				int qtdeImp = 0, qtdePar = 0;
-				
-				for (int i = 0; i < vec.length; i++) {
-					System.out.println("Digite um número");
-					vec[i] = s.nextInt();
-					
-					if(vec[i] % 2 == 0) {
-						qtdePar++;
-					} else {
-						qtdeImp++;
-					}
-				}
-				
-				int[] imp = new int[qtdeImp];
-				int[] par = new int[qtdePar];
-				
-				for (int i = 0; i < par.length; i++) {
-					par[i] = 1;
-				}
-				
-				for (int i = 0; i < imp.length; i++) {
-					imp[i] = 0;
-				}
-				
-				for (int i = 0; i < vec.length; i++) {
-					if(vec[i] % 2 == 0) {
-						for (int j = 0; j < par.length; j++) {
-							if(par[j] == 1) {
-								par[j] = vec[i];
-								break;
-							}
-						}
-					} else {
-						for (int j = 0; j < imp.length; j++) {
-							if(imp[j] == 0) {
-								imp[j] = vec[i];
-								break;
-							}
-						}
-					}
-				}
-				
-				Arrays.sort(par);
-				Arrays.sort(imp);
-				
-				System.out.println("Pares:");
-				
-				for (int i = 0; i < par.length; i++) {
-					System.out.print(par[i] + " ");
-				}
-				
-				System.out.println("\n\nImpares:");
-				
-				for (int i = imp.length - 1; i >= 0; i--) {
-					System.out.print(imp[i] + " ");
-				}
-				
+				ex6();
 				break;
-				
 			case 7:
-				
-				System.out.println("Digite o tamanho dos vetores:");
-				int qtd = s.nextInt();
-						
-				int[] vec1 = new int[qtd];
-				int[] vec2 = new int[qtd];
-				
-				System.out.println("Vetor 1\n");
-				
-				for (int i = 0; i < vec2.length; i++) {
-					System.out.println("Digite um número:");
-					vec1[i] = s.nextInt();
-				}
-				
-				System.out.println("\n\nVetor 2\n");
-				
-				for (int i = 0; i < vec2.length; i++) {
-					System.out.println("Digite um número:");
-					vec2[i] = s.nextInt();
-				}
-				
-				boolean iguais = false;
-				
-				for (int i = 0; i < vec2.length; i++) {
-					if(vec1[i] == vec2[i]) {
-						iguais = true;
-					} else {
-						iguais = false;
-						break;
-					}
-				}
-				
-				if (iguais) {
-					System.out.println("São IGUAIS");
-				} else {
-					System.out.println("São DIFERENTES");
-				}
-				
+				ex7();
 				break;
 			case 8:
 				System.out.println("Tchau!");
@@ -289,6 +46,213 @@ public class Vetores {
 			default:
 				System.out.println("Opção Inválida.");
 			}
+		}
+	}
+	public static void ex1() {
+		for(int i = 0; i < num.length; i++) {
+			System.out.println("Digite um número: ");
+			num[i] = sc.nextInt();
+		}
+		System.out.println();
+		System.out.println("Sentido normal: ");
+		for(int i = 0; i < num.length; i++) {
+			System.out.print(num[i] + " ");
+		}
+		System.out.println();
+		System.out.println("Sentido inverso: ");
+		for(int i = num.length - 1; i >= 0 ; i--) {
+			System.out.print(num[i] + " ");
+		}
+	}
+	public static void ex2() {
+		for(int i = 0; i < num.length; i++) {
+			System.out.println("Digite um número: ");
+			num[i] = sc.nextInt();
+		}
+		
+		for(int i = num.length - 1; i >= 0 ; i--) {
+			num2[9-i] = num[i];
+		}
+		System.out.println("1° Vetor: ");
+		for(int i = 0; i < num.length; i++) {
+			System.out.print(num[i] + " ");
+		}
+		System.out.println();
+		System.out.println("2° Vetor: ");
+		for(int i = 0; i < num2.length; i++) {
+			System.out.print(num2[i] + " ");
+		}	
+	}
+	public static void ex3() {
+		for(int i = 0; i < num.length; i++) {
+			System.out.println("Digite um número inteiro: ");
+			num[i] = sc.nextInt();
+		}
+		
+		for(int i = 0; i < num.length; i++) {
+			if(i % 2 == 0) {
+				numeros[i] = (double) num[i] / 2;
+			}else {
+				numeros[i] = (double) num[i] * 3;
+			}
+		}
+		System.out.println();
+		System.out.println("1° Vetor: ");
+		for(int i = 0; i < num.length; i++) {
+			System.out.print(num[i] + " ");
+		}
+		System.out.println();
+		System.out.println("2° Vetor: ");
+		for(int i = 0; i < numeros.length; i++) {
+			System.out.print(numeros[i] + " ");
+		}
+	}
+	public static void ex4() {
+		String nome;
+		for(int i = 0; i < c.length; i++) {
+			System.out.println("Digite um nome: ");
+			c[i] = sc.next();
+		}
+		boolean busca = false;
+		System.out.println("Digite o nome a ser buscado: ");
+		nome = sc.next();
+		for(int i = 0; i < c.length; i++) {
+			if(c[i].equals(nome)) {
+				System.out.println("ACHEI");
+				busca = true;
+			}else {
+				System.out.println("NÃO ACHEI");
+			}
+		}
+	}
+	public static void ex5() {
+		int size2 = 20;
+		int[] vet = new int[size2];
+		int[] vet2 = new int[size2];
+		int[] vet3 = new int[size2];
+		int[] vet4 = new int[size2];
+		int[] vet5 = new int[size2];
+		
+		System.out.println("1° Vetor: ");
+		for (int i = 0; i < size2; i++) {
+			System.out.println("Digite um número inteiro");
+			vet[i] = sc.nextInt();
+		}
+		System.out.println();
+		System.out.println("2° Vetor: ");
+		for (int i = 0; i < size2; i++) {
+			System.out.println("Digite um número inteiro");
+			vet2[i] = sc.nextInt();
+		}
+		System.out.println();
+		System.out.println("3° Vetor: ");
+		for (int i = 0; i < size2; i++) {
+			vet3[i] = vet2[i] - vet[i];
+			System.out.print(vet3[i]+" ");
+		}
+		System.out.println();
+		System.out.println("4° Vetor: ");
+		for (int i = 0; i < size2; i++) {
+			vet4[i] = vet2[i] + vet[i];
+			System.out.print(vet4[i]+" ");
+		}
+		System.out.println();
+		System.out.println("5° Vetor: ");
+		for (int i = 0; i < size2; i++) {
+			vet5[i] = vet2[i] * vet[i];
+			System.out.print(vet5[i]+" ");
+		}
+	}
+	public static void ex6() {
+		System.out.println("Digite o tamanho do vetor: ");
+		size = sc.nextInt();
+		
+		int[] vetor = new int[size];
+		int quantImp = 0, quantPar = 0;
+		
+		for (int i = 0; i < vetor.length; i++) {
+			System.out.println("Digite um número: ");
+			vetor[i] = sc.nextInt();
+			if(vetor[i] % 2 == 0) {
+				quantPar++;
+			} else {
+				quantImp++;
+			}
+		}
+		int[] impar = new int[quantImp];
+		int[] par = new int[quantPar];
+		
+		for (int i = 0; i < par.length; i++) {
+			par[i] = 1;
+		}
+		
+		for (int i = 0; i < impar.length; i++) {
+			impar[i] = 0;
+		}
+		
+		for (int i = 0; i < vetor.length; i++) {
+			if(vetor[i] % 2 == 0) {
+				for (int j = 0; j < par.length; j++) {
+					if(par[j] == 1) {
+						par[j] = vetor[i];
+						break;
+					}
+				}
+			} else {
+				for (int j = 0; j < impar.length; j++) {
+					if(impar[j] == 0) {
+						impar[j] = vetor[i];
+						break;
+					}
+				}
+			}
+		}
+		
+		Arrays.sort(par);
+		Arrays.sort(impar);
+		
+		System.out.println("Pares: ");
+		for (int i = 0; i < par.length; i++) {
+			System.out.print(par[i] + " ");
+		}
+		System.out.println();
+		System.out.println("\nImpares: ");
+		for (int i = impar.length - 1; i >= 0; i--) {
+			System.out.print(impar[i]+" ");
+		}
+	}
+	public static void ex7() {
+		System.out.println("Digite o tamanho dos dois vetores:");
+		size = sc.nextInt();
+				
+		int[] vetor1 = new int[size];
+		int[] vetor2 = new int[size];
+		
+		System.out.println("1° Vetor: ");
+		for (int i = 0; i < size; i++) {
+			System.out.println("Digite um número: ");
+			vetor1[i] = sc.nextInt();
+		}
+		
+		System.out.println("\n2° Vetor: ");
+		for (int i = 0; i < size; i++) {
+			System.out.println("Digite um número: ");
+			vetor2[i] = sc.nextInt();
+		}
+		
+		boolean igual = false;
+		for (int i = 0; i < size; i++) {
+			if(vetor1[i] == vetor2[i]) {
+				igual = true;
+			} else {
+				igual = false;
+				break;
+			}
+		}
+		if (igual) {
+			System.out.println("O conteúdo é Igual!");
+		} else {
+			System.out.println("O conteúdo é diferente!");
 		}
 	}
 }
