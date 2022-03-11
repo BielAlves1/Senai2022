@@ -118,11 +118,12 @@ public class Vetores {
 		nome = sc.next();
 		for(int i = 0; i < c.length; i++) {
 			if(c[i].equals(nome)) {
-				System.out.println("ACHEI");
+				System.out.println("ACHEI o nome");
 				busca = true;
-			}else {
-				System.out.println("NÃO ACHEI");
 			}
+		}
+		if(!busca) {
+			System.out.println("NÃO ACHEI o nome._.");
 		}
 	}
 	public static void ex5() {
@@ -135,13 +136,13 @@ public class Vetores {
 		
 		System.out.println("1° Vetor: ");
 		for (int i = 0; i < size2; i++) {
-			System.out.println("Digite um número inteiro");
+			System.out.println("Digite um número inteiro: ");
 			vet[i] = sc.nextInt();
 		}
 		System.out.println();
 		System.out.println("2° Vetor: ");
 		for (int i = 0; i < size2; i++) {
-			System.out.println("Digite um número inteiro");
+			System.out.println("Digite um número inteiro: ");
 			vet2[i] = sc.nextInt();
 		}
 		System.out.println();
