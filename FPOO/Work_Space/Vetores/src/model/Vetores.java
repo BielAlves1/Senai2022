@@ -16,7 +16,7 @@ public class Vetores {
 		
 		int menu = 0;
 		while(menu != 8) {
-			System.out.println("\n1 - Ex1\n2 - Ex2\n3 - Ex3\n4 - Ex4\n5 - Ex5\n6 - Ex6\n7 - Ex7\\n8 - Sair");
+			System.out.println("\n\n1 - Ex1\n2 - Ex2\n3 - Ex3\n4 - Ex4\n5 - Ex5\n6 - Ex6\n7 - Ex7\\n8 - Sair");
 			menu = sc.nextInt();
 			switch(menu) {
 			case 1:
@@ -134,34 +134,42 @@ public class Vetores {
 		int[] vet4 = new int[size2];
 		int[] vet5 = new int[size2];
 		
-		System.out.println("1° Vetor: ");
+		System.out.println("Preencha o primeiro Vetor.");
 		for (int i = 0; i < size2; i++) {
 			System.out.println("Digite um número inteiro: ");
 			vet[i] = sc.nextInt();
 		}
-		System.out.println();
-		System.out.println("2° Vetor: ");
+		System.out.println("Preencha o segundo Vetor.");
 		for (int i = 0; i < size2; i++) {
 			System.out.println("Digite um número inteiro: ");
 			vet2[i] = sc.nextInt();
+		}
+		System.out.println("1° Vetor: ");
+		for (int i = 0; i < size2; i++) {
+			System.out.print("["+vet[i]+"] ");
+		}
+		System.out.println();
+		System.out.println("2° Vetor: ");
+		for (int i = 0; i < size2; i++) {
+			System.out.print("["+vet2[i]+"] ");
 		}
 		System.out.println();
 		System.out.println("3° Vetor: ");
 		for (int i = 0; i < size2; i++) {
 			vet3[i] = vet2[i] - vet[i];
-			System.out.print(vet3[i]+" ");
+			System.out.print("["+vet3[i]+"] ");
 		}
 		System.out.println();
 		System.out.println("4° Vetor: ");
 		for (int i = 0; i < size2; i++) {
 			vet4[i] = vet2[i] + vet[i];
-			System.out.print(vet4[i]+" ");
+			System.out.print("["+vet4[i]+"] ");
 		}
 		System.out.println();
 		System.out.println("5° Vetor: ");
 		for (int i = 0; i < size2; i++) {
 			vet5[i] = vet2[i] * vet[i];
-			System.out.print(vet5[i]+" ");
+			System.out.print("["+vet5[i]+"] ");
 		}
 	}
 	public static void ex6() {

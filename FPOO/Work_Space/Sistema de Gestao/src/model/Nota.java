@@ -1,26 +1,22 @@
 package model;
 
-ppublic class Notas {
+public class Nota {
 	
 	public String componente;
-	public float[] notas =  new float[3];
+	public float[] nota =  new float[3];
 	
-	public Notas() {
-		// TODO Auto-generated constructor stub
-	}
+	public Nota(){}
 	
-	public Notas(String componente, float[] notas) {
+	public Nota(String componente, float[] nota) {
 		this.componente = componente;
-		this.notas = notas;
+		this.nota = nota;
 	}
 	
 	public float obterMedia() {
-		float soma = 0;
-		for (int i = 0; i < notas.length; i++) {
-			soma += notas[i];
+		float mediaS = 0;
+		for (int i = 0; i < nota.length; i++) {
+			mediaS += nota[i];
 		}
-		
-		return soma/notas.length;
+		return mediaS/nota.length;
 	}
-
 }
