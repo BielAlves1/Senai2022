@@ -1,23 +1,26 @@
 package model;
 
-import java.sql.Date;
-
-public class Nota {
-	public String componente;	
-	public float[] nota = new float[3];
+ppublic class Notas {
 	
-	Nota(){}
+	public String componente;
+	public float[] notas =  new float[3];
 	
-	Nota(float[] nota, String componente){
-		this.nota = nota;
+	public Notas() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Notas(String componente, float[] notas) {
 		this.componente = componente;
+		this.notas = notas;
 	}
+	
 	public float obterMedia() {
-	
-		return 0;
+		float soma = 0;
+		for (int i = 0; i < notas.length; i++) {
+			soma += notas[i];
+		}
+		
+		return soma/notas.length;
 	}
-	
-	public String ToString() {
-		return componente+"\t"+nota;
-	}
+
 }
