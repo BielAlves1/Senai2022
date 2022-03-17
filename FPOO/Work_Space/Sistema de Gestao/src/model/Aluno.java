@@ -1,5 +1,6 @@
 package model;
 
+import java.text.SimpleDateFormat;
 import java.time.Period;
 import java.util.Date;
 import model.Nota;
@@ -10,6 +11,7 @@ public class Aluno {
 	public String nome;
 	public Date nascimento;
 	public Nota[] notas = new Nota[4];
+	SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
 	
 	public Aluno() {}
 	
@@ -19,17 +21,17 @@ public class Aluno {
 		this.nascimento = nascimento;
 	}
 	public String obterConceito() {
-		boolean aprov = false;
+		boolean aprov = true;
 		for(int i = 0; i < notas.length; i++) {
-			if(notas[i].obterMedia() >= 50) {
-				aprov = true;
+			if(notas[i].obterMedia() < 50) {
+				aprov = false;
 				break;
 			}
 		}
-		if(aprov) {
-			return nome+" foi APROVADO(a)!";
+		if(!aprov) {
+			return nome+" foi APROVADO(a)";
 		} else {
-			return nome+" foi REPROVADO!(a)";
+			return nome+" foi REPROVADO(a)";
 		}
 	}
 	public int calcIdade() {
@@ -45,5 +47,10 @@ public class Aluno {
 		}else{
 			return hoje.getYear() - nascimento.getYear() - 1;
 		}
+	}
+	@Override
+	public String toString() {
+		return "\t|RA\t\tNome\t\tNascimento\t\tIdade|\n" + 
+		"\t|" +ra+ "\t\t" +nome+ "\t\t" +df.format(nascimento)+ "\t\t " +calcIdade()+ "  |\n";
 	}
 }

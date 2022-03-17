@@ -16,7 +16,7 @@ public class Vetores {
 		
 		int menu = 0;
 		while(menu != 8) {
-			System.out.println("\n\n1 - Ex1\n2 - Ex2\n3 - Ex3\n4 - Ex4\n5 - Ex5\n6 - Ex6\n7 - Ex7\\n8 - Sair");
+			opcoes();
 			menu = sc.nextInt();
 			switch(menu) {
 			case 1:
@@ -259,9 +259,24 @@ public class Vetores {
 			}
 		}
 		if (igual) {
-			System.out.println("O conteúdo é Igual!");
+			System.out.println("O conteúdo é o mesmo!");
 		} else {
 			System.out.println("O conteúdo é diferente!");
+		}
+	}
+	public static void opcoes() {
+		String[] opcoesV = new String[8];
+		opcoesV[0] = "1. |Excercício - 1|";
+		opcoesV[1] = "2. |Excercício - 2|";
+		opcoesV[2] = "3. |Excercício - 3|";
+		opcoesV[3] = "4. |Excercício - 4|";
+		opcoesV[4] = "5. |Excercício - 5|";
+		opcoesV[5] = "6. |Excercício - 6|";
+		opcoesV[6] = "7. |Excercício - 7|";
+		opcoesV[7] = "8. Sair";
+		
+		for(int i = 0; i < opcoesV.length; i++) {
+			System.out.println(opcoesV[i]);
 		}
 	}
 }
