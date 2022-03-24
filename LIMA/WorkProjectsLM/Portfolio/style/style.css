@@ -1,0 +1,51 @@
+body{
+    background-image: url("../img/fundo.jpg");
+	background-repeat: no-repeat, repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.container{
+    height: 100%;
+    flex-direction: column;
+    text-align: center;
+}
+.foto{
+    width: 400px;
+    height: 400px;
+    border: 1px solid;
+    border-radius: 50%;
+    
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 40px;
+    grid-row-gap: 25px;
+    width: 70%;
+    height: 300px;
+    padding-left: 15%;
+    padding-top: 4%;
+}
+.content{
+    background-color: rgb(185, 185, 185);
+    text-align: center;
+    box-shadow: 2px 2px 2px;
+}
+.content:hover{
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+.lg{
+    color: rgb(13, 167, 214);
+}
+.button{
+    padding-top: 2%;
+    height: 30px;
+	border: none;
+	width: 200px;
+	background-color: black;
+	color:white;
+}
