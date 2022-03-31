@@ -23,7 +23,7 @@ public class Cama {
 				System.out.println("");
 				break;
 			default:
-				System.out.println("Opção Inválida.\n");
+				System.out.println("Opção Inválida.");
 			}
 		}
 	}
