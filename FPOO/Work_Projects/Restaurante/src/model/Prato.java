@@ -19,9 +19,6 @@ public class Prato {
 	public String toString() {
 		return "\t[Cod\t\tNome\t\tTipo\t\t\tDescrição]\n"
 				+"\t[" +codPrato+ "\t\t" +nome+ "\t" +tipo+ "\t\t\t " +descricao+ "]\n\n" 
-				+"\tPreço: R$";
-	}
-	public float toFloat() {
-		return preco;
+				+"\tPreço: R$"+preco+"\n";
 	}
 }
