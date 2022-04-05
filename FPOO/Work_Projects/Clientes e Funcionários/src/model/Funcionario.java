@@ -20,6 +20,6 @@ public class Funcionario extends Pessoa{
 	
 	@Override
 	public String toString() {
-		return "Funcionario [matricula=" + matricula + ", comissao=" + comissao + "]";
+		return "\t[Matrícula\t\tNome\t\tTelefone\t\tNascimento\t\tComissão]";
 	}
 }

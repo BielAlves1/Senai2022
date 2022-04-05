@@ -20,6 +20,6 @@ public class Cliente extends Pessoa{
 	
 	@Override
 	public String toString() {
-		return "\t"+id+""+toString();
+		return "\t[Id\t\tNome\t\tTelefone\t\tNascimento\t\tSaldo]";
 	}
 }

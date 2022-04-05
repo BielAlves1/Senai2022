@@ -1,13 +1,11 @@
 package model;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Pessoa {
 
 	private String nome, telefone;
 	private Date nascimento;
-	SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
 	
 	public String getNome() {
 		return nome;
@@ -27,10 +25,4 @@ public class Pessoa {
 	public void setNascimento(Date nascimento) {
 		this.nascimento = nascimento;
 	}
-	
-	@Override
-	public String toString() {
-		return "\t\t"+nome+"\t\t\t"+telefone+"\t\t"+df.format(nascimento);
-	}
-	
 }
