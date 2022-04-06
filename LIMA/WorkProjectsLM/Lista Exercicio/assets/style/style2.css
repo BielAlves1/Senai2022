@@ -1,0 +1,50 @@
+/* Exercício 3 */
+*{
+    margin: 0;
+}
+header{
+    font: Arial;
+}
+.hd{
+    height: 150px;
+}
+.hd h1{
+    margin-bottom: -1%;
+}
+.aa{
+    margin-left: 92%;
+}
+.cor1{
+    height: 300px;
+    max-width: 100%;
+    background-color: red;
+} 
+.cor2{
+    height: 300px;
+    max-width: 100%;
+    background-color: rgb(2, 248, 2);
+} 
+.cor3{
+    height: 300px;
+    max-width: 100%;
+    background-color: blue;
+}
+/* Exercício 4 */
+.cores{
+    display: flex;
+}
+.color1{
+    height: 100vh;
+    width: 34%;
+    background-color: red;
+} 
+.color2{
+    height: 100vh;
+    width: 34%;
+    background-color: rgb(2, 248, 2);
+} 
+.color3{
+    height: 100vh;
+    width: 34%;
+    background-color: blue;
+}
