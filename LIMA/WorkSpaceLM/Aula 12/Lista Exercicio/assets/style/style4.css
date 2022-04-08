@@ -1,0 +1,81 @@
+/* Exercício 7 */
+*{
+    margin: 0;
+}
+header{
+    font: Arial;
+}
+.hd{
+    height: 150px;
+}
+.hd h1{
+    margin-bottom: -1%;
+}
+.aa{
+    margin-left: 92%;
+}
+.top{
+    background-color: rgb(204, 70, 70);
+    height: 15vh; 
+    width: 100%;
+}
+.mid{
+   display: flex;
+}
+.quadrado{
+    background-color: rgb(194, 129, 139);
+    height: 500px;
+    width: 25%;
+}
+.quadradao{
+    background-color: rgb(129, 54, 54);
+    height: 500px;
+    width: 75%;
+}
+.footer{
+    background-color: rgb(170, 82, 82);
+    height: 15vh; 
+    width: 100%;
+}
+/* Exercício 8 */
+.top2{
+    background-color: rgb(204, 70, 70);
+    height: 8vh; 
+    width: 100%;
+}
+.nav{
+    display: flex;
+    color: white;
+    justify-content: right;
+}
+.nav p{
+    font-size: 30px;
+    padding: 15px;
+}
+.mid2{
+   background-color: rgb(129, 54, 54);
+   height: 70vh;
+   width: 100%;
+   justify-content: center;
+   display: flex;
+}
+.mid2 img{
+    height: 30vh;
+    width: 30%;
+    border-radius: 25px;
+    margin-top: 10%;
+}
+.footer2{
+    background-color: rgb(170, 82, 82);
+    height: 8vh; 
+    width: 100%;
+    display: flex;
+}
+.foot{
+    background-color: white;
+    height: 6vh;
+    width: 20%;
+    margin-left: 78%;
+    border-radius: 50px;
+    padding-top: 5px;
+}

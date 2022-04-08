@@ -1,0 +1,57 @@
+*{ 
+    margin: 0;
+    box-sizing: border-box;
+}
+#container {
+    display: grid;
+    height: 100vh;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: "d1 d2 d3" "d4 d5 d6" "d7 d8 d9";
+    }
+.d1{
+    grid-area: d1;
+    background-color: rgb(182, 182, 182);
+    border: 2px solid black;
+}
+.d2{
+    grid-area: d2;
+    background-color: rgb(182, 182, 182);
+    border: 2px solid black;
+}
+.d3{
+    grid-area: d3;
+    background-color: rgb(182, 182, 182);
+    border: 2px solid black;
+}
+.d4{
+    grid-area: d4;
+    background-color: rgb(182, 182, 182);
+    border: 2px solid black;
+}
+.d5{
+    grid-area: d5;
+    background-color: rgb(182, 182, 182);
+    border: 2px solid black;
+}
+.d6{
+    grid-area: d6;
+    background-color: rgb(182, 182, 182);
+    border: 2px solid black;
+}
+.d7{
+    grid-area: d7;
+    background-color: rgb(182, 182, 182);
+    border: 2px solid black;
+}
+.d8{
+    grid-area: d8;
+    background-color: rgb(182, 182, 182);
+    border: 2px solid black;
+}
+.d9{
+    grid-area: d9;
+    background-color: rgb(182, 182, 182);
+    border: 2px solid black;
+}
