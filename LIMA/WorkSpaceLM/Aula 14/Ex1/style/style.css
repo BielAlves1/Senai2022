@@ -2,6 +2,9 @@
     margin: 0;
     box-sizing: border-box;
 }
+body{
+    background-color: rgb(248, 247, 247);
+}
 #container{
     height: 100vh;
     display: grid;
@@ -11,24 +14,38 @@
 }
 .nav{
     display: flex;
+    justify-content: space-between;
 }
 .nav img{
     height: 55px;
     width: 70px;
     margin: 5px;
 }
+.nav p{
+    margin: 23px;   
+}
 header{
     height: 7vh;
     grid-area: h;
-    background-color: rgb(207, 207, 210);
+    background-color: rgb(227, 227, 227);
 }
-.icons{
-
+.menu{
+    display: flex;
+}
+.menu i{
+   margin-left: 20px;
+   margin: 20px;
+}
+.menu p{
+    margin-right: 30px;
+}
+.p{
+    margin-left: 50px;
 }
 .mid{
     height: 40vh;
     grid-area: m1;
-    background-color: rgb(182, 182, 182);
+    background-color: rgb(255, 255, 255);
     border: 1px solid black;   
     margin-left: 5%; 
     margin-top: 8%;
@@ -37,7 +54,7 @@ header{
 .mid2{
     height: 50vh;
     grid-area: m2;
-    background-color: rgb(182, 182, 182);
+    background-color: rgb(255, 255, 255);
     border: 1px solid black;
     margin-top: 5%;
     margin-left: 5%;
@@ -45,9 +62,47 @@ header{
 .mid3{ 
     height: 80vh;
     grid-area: m3;
-    background-color: rgb(182, 182, 182);
+    background-color: rgb(255, 255, 255);
     border: 1px solid black;
     margin-left: 3%;
     margin-top: 4%;
     margin-right: 5%;
+   
+}
+.mid3 img{
+    height: 83.8%;
+    width: 100%;
+}
+.cores{
+    display: flex;
+    color: white;
+}
+.cores p{
+    margin: 15px;
+}
+.numero{
+    font-size: 35px;
+}
+.azul{
+    height: 125px;
+    width: 20%;
+    background-color: rgb(103, 190, 236);
+}
+.verde{
+    height: 125px;
+    width: 20%;
+    background-color: rgb(4, 219, 201);
+    margin-left: 0.5%;
+}
+.amarelo{
+    height: 125px;
+    width: 20%;
+    background-color: rgb(255, 179, 0);
+    margin-left: 0.5%;
+}
+.rosa{
+    height: 125px;
+    width: 20%;
+    background-color: rgb(215, 85, 139);
+    margin-left: 0.5%;
 }
