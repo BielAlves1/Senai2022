@@ -16,7 +16,7 @@ public class Arquivo {
 			FileWriter fw = new FileWriter(fileName + ".csv", append);
 			BufferedWriter bw = new BufferedWriter(fw);
 			
-			bw.write(info);
+			bw.write(info+"\r\n");
 			
 			bw.close();
 			fw.close();
@@ -32,7 +32,7 @@ public class Arquivo {
 			FileReader fr = new FileReader(fileName +".csv");
 			BufferedReader br = new BufferedReader(fr);
 			
-			String linha = "\r\n";
+			String linha = "";
 			
 			while((linha = br.readLine()) != null) {
 				data.add(linha);

@@ -1,4 +1,4 @@
-package model;
+package ex1;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -24,7 +24,7 @@ public class Cadastro {
 		}
 	}
 	public ArrayList<String> listar(String fileName) {
-		ArrayList<String> carro = new ArrayList<>();
+		ArrayList<String> pessoa = new ArrayList<>();
 		try {
 			FileReader fr = new FileReader(fileName +".csv");
 			BufferedReader br = new BufferedReader(fr);
@@ -32,7 +32,7 @@ public class Cadastro {
 			String linha = "";
 			
 			while((linha = br.readLine()) != null) {
-				carro.add(linha);
+				pessoa.add(linha);
 			}
 			br.close();
 			fr.close();
@@ -43,6 +43,6 @@ public class Cadastro {
 		} catch (Exception e) {
 			System.out.println("Erro geral");
 		}
-		return carro;
+		return pessoa;
 	}
 }
