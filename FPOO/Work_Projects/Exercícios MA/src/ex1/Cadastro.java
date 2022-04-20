@@ -12,7 +12,7 @@ public class Cadastro {
 	
 	public void cadastrar(String info, String fileName, boolean append) {
 		try {
-			FileWriter fw = new FileWriter(fileName + ".csv", append);
+			FileWriter fw = new FileWriter(fileName + ".txt", append);
 			BufferedWriter bw = new BufferedWriter(fw);
 			
 			bw.write(info+"\r\n");
@@ -26,7 +26,7 @@ public class Cadastro {
 	public ArrayList<String> listar(String fileName) {
 		ArrayList<String> pessoa = new ArrayList<>();
 		try {
-			FileReader fr = new FileReader(fileName +".csv");
+			FileReader fr = new FileReader(fileName +".txt");
 			BufferedReader br = new BufferedReader(fr);
 			
 			String linha = "";
