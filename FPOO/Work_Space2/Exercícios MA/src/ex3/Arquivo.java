@@ -38,11 +38,11 @@ public class Arquivo {
 			br.close();
 			fr.close();
 		} catch (FileNotFoundException e) {
-			System.out.println("Arquivo não encontrado.");
+			System.out.println("Arquivo não encontrado."+ e);
 		} catch (IOException e) {
-			System.out.println("Arquivo está aberto");
+			System.out.println("Arquivo está aberto"+ e);
 		} catch (Exception e) {
-			System.out.println("Erro geral");
+			System.out.println("Erro geral" + e);
 		}
 		return aluno;
 	}
