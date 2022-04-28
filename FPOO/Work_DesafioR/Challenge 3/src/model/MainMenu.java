@@ -7,6 +7,8 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -91,6 +93,7 @@ public class MainMenu {
 	private static void listarNums() {
 		ArrayList<Integer> info = ler();
 		info.sort(null);
+		Collections.sort(info);
 		for (Integer num : info) {
 			System.out.println(num);
 		}
