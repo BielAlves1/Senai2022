@@ -14,7 +14,14 @@ body{
     height: 400px;
     border: 1px solid;
     border-radius: 50%;
+    cursor: pointer;
     
+}
+.foto:hover{
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    transition: 0.5s;
 }
 .grid{
     display: grid;
@@ -24,13 +31,14 @@ body{
     grid-row-gap: 25px;
     width: 70%;
     height: 300px;
-    padding-left: 15%;
-    padding-top: 4%;
+    margin-left: 15%;
+    margin-top: 4%;
 }
 .content{
     background-color: rgb(185, 185, 185);
     text-align: center;
     box-shadow: 2px 2px 2px;
+    cursor: pointer;
 }
 .content:hover{
     -webkit-transform: scale(1.1);
@@ -38,14 +46,33 @@ body{
     transform: scale(1.1);
     transition: 0.5s;
 }
+.p{
+    color: rgb(13, 167, 214);
+    font-size: 30px;
+}
+.h1{
+    font-size: 45px;
+}
 .lg{
     color: rgb(13, 167, 214);
 }
 .button{
-    padding-top: 2%;
-    height: 30px;
+    height: 45px;
 	border: none;
+    border-radius: 30px;
 	width: 200px;
-	background-color: black;
+	background-color: rgb(13, 167, 214);
 	color:white;
+    margin-top: 2%;
+    margin-left: 44%;
+    font-size: 20px;
+    cursor: pointer;
+}
+.button:hover{
+	background-color: rgb(38, 191, 238);
+	color: white;
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    transition: 0.3s;
 }
