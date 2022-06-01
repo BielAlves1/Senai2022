@@ -3,6 +3,7 @@ package view;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -12,6 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import controllers.ProcessaFuncionario;
+import controllers.ProcessaOS;
 
 public class TelaFuncionario extends JDialog implements ActionListener {
 
@@ -98,9 +100,14 @@ public class TelaFuncionario extends JDialog implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 	
+	public static void main(String[] agrs) throws ParseException {
+		ProcessaFuncionario.abrir();
+		TelaFuncionario tf = new TelaFuncionario();
+		tf.setVisible(true);
+	}
 	
 }

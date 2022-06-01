@@ -27,15 +27,16 @@ public class TelaOS extends JFrame implements ActionListener {
 	private static final long serialVersionUID = 1L;
 	private JPanel painel;
 	private JLabel id, endereco, descricao, dataInicio, dataFim, horaInicio, horaFim, valor, rotulos,imagem;
-	private JTextField tfId, tfEndereco, tf, tfCustoHora, tfTempoGasto;
-	private JComboBox<String> cbEquipamento;
+	private JTextField tfId, tfEndereco, tfDataInicio, tfDataFim, tfHoraInicio, tfHoraFim, tfValor;
 	private JScrollPane rolagem;
-	private JTextArea verResultados;
+	private JTextArea list, tDescricao;
 	private JButton create, read, update, delete;
+	
 	private String imgIco = "./assets/icone.png";
-	private String[] imagens = { "./imagens/roï¿½adeira.jpg", "./imagens/trator.jpg", "./imagens/caminhao.jpg",
+	private String[] imagens = { "", "", "",
 			"./imagens/outros.jpg" };
 	private ImageIcon icon;
+	
 	private int autoId = ProcessaOS.servicos.size() + 1;
 	private String texto = "";
 
@@ -44,7 +45,7 @@ public class TelaOS extends JFrame implements ActionListener {
 
 	TelaOS() {
 		setTitle("Ordem de Serviços");
-		setBounds(100, 100, 800, 600);
+		setBounds(450, 100, 800, 600);
 		setIconImage(new ImageIcon(imgIco).getImage());
 		painel = new JPanel();
 		painel.setBackground(new Color(174, 238, 238));
@@ -53,64 +54,65 @@ public class TelaOS extends JFrame implements ActionListener {
 		setLayout(null);
 
 		id = new JLabel("Id:");
-		id.setBounds(20, 20, 120, 30);
+		id.setBounds(65, 25, 120, 30);
 		painel.add(id);
 		endereco = new JLabel("Endereço:");
-		endereco.setBounds(20, 55, 120, 30);
+		endereco.setBounds(20, 60, 120, 30);
 		painel.add(endereco);
 		descricao = new JLabel("Descrição:");
-		descricao.setBounds(20, 125, 120, 30);
+		descricao.setBounds(20, 115, 120, 30);
 		painel.add(descricao);
 		dataInicio = new JLabel("Data Inicio:");
-		dataInicio.setBounds(20, 165, 120, 30);
+		dataInicio.setBounds(20, 175, 120, 30);
 		painel.add(dataInicio);
-		horaInicio = new JLabel("Hora início:");
-		horaInicio.setBounds(20, 200, 120, 30);
+		horaInicio = new JLabel("Hora Início:");
+		horaInicio.setBounds(20, 210, 120, 30);
 		painel.add(horaInicio);
-		dataFim = new JLabel("Data fim:");
-		dataFim.setBounds(20, 240, 120, 30);
+		dataFim = new JLabel("Data Fim:");
+		dataFim.setBounds(30, 245, 120, 30);
 		painel.add(dataFim);
 		horaFim = new JLabel("Hora Fim:");
-		horaFim.setBounds(20, 280, 120, 30);
+		horaFim.setBounds(30, 280, 120, 30);
 		painel.add(horaFim);
-		valor = new JLabel("Valor:");
-		valor.setBounds(20, 280, 120, 30);
+		valor = new JLabel("Valor da OS:");
+		valor.setBounds(15, 315, 120, 30);
 		painel.add(valor);
-		rotulos = new JLabel("Id | Endereço | Descrição | Data Inicio | Hora Inicio | Data Fim | Hora Fim | Valor");
-		rotulos.setBounds(20, 360, 500, 30);
+		rotulos = new JLabel("Id        |     Endereço       |       Descrição       |       Data Inicio       |       Hora Inicio          |         Data Fim          |          Hora Fim           |           Valor");
+		rotulos.setBounds(15, 360, 800, 30);
 		painel.add(rotulos);
 
 		tfId = new JTextField(String.format("%d", autoId));
 		tfId.setEditable(false);
-		tfId.setBounds(140, 25, 140, 30);
+		tfId.setBounds(90, 25, 75, 30);
 		painel.add(tfId);
-		cbEquipamento = new JComboBox<String>(new String[] { "Pedreiro", "Carpinteiro", "Eletricista", "Encanador" });
-		cbEquipamento.setBounds(140, 60, 255, 30);
-		painel.add(cbEquipamento);
-		tf = new JTextField();
-		tf.setBounds(140, 95, 255, 30);
-		painel.add(tf);
-		tfCustoHora = new JTextField();
-		tfCustoHora.setBounds(140, 130, 255, 30);
-		painel.add(tfCustoHora);
-		tfTempoGasto = new JTextField();
-		tfTempoGasto.setBounds(140, 165, 255, 30);
-		painel.add(tfTempoGasto);
-		tfTempoGasto = new JTextField();
-		tfTempoGasto.setBounds(140, 240, 255, 30);
-		painel.add(tfTempoGasto);
-		tfTempoGasto = new JTextField();
-		tfTempoGasto.setBounds(140, 200, 255, 30);
-		painel.add(tfTempoGasto);
-		tfTempoGasto = new JTextField();
-		tfTempoGasto.setBounds(140, 280, 255, 70);
-		painel.add(tfTempoGasto);
-		verResultados = new JTextArea();
-		verResultados.setEditable(false);
-		verResultados.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.BLACK));
+		tfEndereco = new JTextField();
+		tfEndereco.setBounds(90, 60, 255, 30);
+		painel.add(tfEndereco);
+		tDescricao = new JTextArea();
+		tDescricao.setBounds(90, 105, 255, 60);
+		tDescricao.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.BLACK));
+		painel.add(tDescricao);
+		tfDataInicio = new JTextField();
+		tfDataInicio.setBounds(90, 175, 255, 30);
+		painel.add(tfDataInicio);
+		tfHoraInicio = new JTextField();
+		tfHoraInicio.setBounds(90, 210, 255, 30);
+		painel.add(tfHoraInicio);
+		tfDataFim = new JTextField();
+		tfDataFim.setBounds(90, 245, 255, 30);
+		painel.add(tfDataFim);
+		tfHoraFim = new JTextField();
+		tfHoraFim.setBounds(90, 280, 255, 30);
+		painel.add(tfHoraFim);
+		tfValor = new JTextField();
+		tfValor.setBounds(90, 315, 255, 30);
+		painel.add(tfValor);
+		list = new JTextArea();
+		list.setEditable(false);
+		list.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.BLACK));
 		preencherAreaDeTexto();
-		rolagem = new JScrollPane(verResultados);
-		rolagem.setBounds(20, 400, 740, 150);
+		rolagem = new JScrollPane(list);
+		rolagem.setBounds(10, 400, 765, 150);
 		painel.add(rolagem);
 		imagem = new JLabel();
 		imagem.setBounds(405, 60, 350, 240);
@@ -133,7 +135,6 @@ public class TelaOS extends JFrame implements ActionListener {
 		painel.add(update);
 		painel.add(delete);
 
-		cbEquipamento.addActionListener(this);
 		create.addActionListener(this);
 		read.addActionListener(this);
 		update.addActionListener(this);
@@ -181,7 +182,8 @@ public class TelaOS extends JFrame implements ActionListener {
 
 	public static void main(String[] agrs) throws ParseException {
 		ProcessaOS.abrir();
-		new TelaOS().setVisible(true);
+		TelaOS tos = new TelaOS();
+		tos.setVisible(true);
 	}
 
 }
