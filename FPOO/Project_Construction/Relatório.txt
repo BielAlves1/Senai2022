@@ -1,0 +1,5 @@
+Gabriel Alves
+
+Eu já fiz o diagrama de classes(porém falta o view no diagrama, deixei pra depois por ser grandinho) e deixei o DCU por último, temrinei os models, models.daos, e os controllers.
+ Deixei os dois(Vinícius e Carlos) fazendo o View já que são 4 Telas e eles estão em dois, mas pedi pra que fizessem só 3 por enquanto. 
+Enquanto eu terminava model, dao e controller auxiliei os dois com as telas(fizeram visualmente apenas) e amanhã tentaremos fazer o funcionamento de todas as telas.

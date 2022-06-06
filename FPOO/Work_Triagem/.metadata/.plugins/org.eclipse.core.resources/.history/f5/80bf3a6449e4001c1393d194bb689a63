@@ -1,0 +1,17 @@
+package modelo.modelodao;
+
+import java.util.ArrayList;
+
+import modelo.Login;
+
+public class LoginDAO {
+
+	public ArrayList<Login> ler() {
+		return null;
+	}
+
+	public void escrever(ArrayList<Login> logins) {
+		
+	}
+
+}

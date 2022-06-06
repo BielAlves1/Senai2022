@@ -1,0 +1,19 @@
+1654374967321	Delete element
+1654374998345	Rename type 'Medico'
+1654375032846	Delete element
+1654375072845	Rename type 'PacienteDAO'
+1654375163261	Rename type 'FuncionariosDAO'
+1654375202101	Rename type 'Paciente'
+1654375349416	Rename type 'TelaPaciente'
+1654375444139	Rename method 'Recepcao'
+1654375845963	Rename field 'login'
+1654375954232	Rename field 'tfLogin'
+1654376013414	Rename field 'email'
+1654376440862	Rename type 'Login'
+1654376486914	Rename type 'LoginProcessa'
+1654376617536	Rename compilation unit 'LoginDAO.java'
+1654376939146	Rename type 'PacienteProcessa'
+1654377113083	Rename field 'email'
+1654377140379	Rename method 'getEmail'
+1654377148255	Rename method 'setEmail'
+1654377662043	Delete element

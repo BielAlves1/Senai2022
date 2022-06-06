@@ -1,0 +1,40 @@
+package controle;
+
+import java.util.ArrayList;
+import modelo.Login;
+
+public class LoginProcessa {
+	
+	public static ArrayList<Login> logins = new ArrayList<>();
+	public static String LoginUsusarioConectado;
+	private static LoginDAO fd = new LoginDAO();
+
+	public static void abrir() {
+		logins = fd.ler();
+		if(logins.size() == 0) {
+			logins.add(new Login("admin",("admin")));
+		}
+	}
+
+	public static void salvar() {
+		fd.escrever(logins);
+	}
+	
+	public static int checarLogin(String email) {
+		int retorno = -1;
+		for (int i = 0; i < logins.size(); i++) {
+			if (logins.get(i).getLogin().equals(email)) {
+				return i;
+			}
+		}
+		return retorno;
+	}
+
+	public static boolean checarSenha(int indice, String senha) {
+		if (logins.get(indice).getSenha().equals(senha)) {
+			LoginUsusarioConectado = logins.get(indice).getLogin();
+			return true;
+		}
+		return false;
+	}
+}
