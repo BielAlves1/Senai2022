@@ -13,6 +13,7 @@ public class Funcionario {
 	private String nome, funcao;
 	private Date dataNascimento;
 	private double diaria;
+	
 	private SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
 	private final Locale BRASIL = new Locale("pt", "BR");
 	private DecimalFormat decf = new DecimalFormat("#.00");
@@ -20,7 +21,7 @@ public class Funcionario {
 	public Funcionario(int idF) {
 		this.idF = idF;
 	}
-
+	
 	public Funcionario(int idF, String nome, String funcao, String dataNascimento, double diaria) {
 		decf.setCurrency(Currency.getInstance(BRASIL));
 		this.idF = idF;

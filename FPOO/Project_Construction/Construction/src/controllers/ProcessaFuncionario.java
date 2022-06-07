@@ -13,7 +13,7 @@ public class ProcessaFuncionario {
 	public static void abrir() {
 		funcionarios = fd.ler();
 		if(funcionarios.size() == 0) {
-			funcionarios.add(new Funcionario(1, "Roberto Souza", "Pedreiro", "03/10/1996", 60.50f));
+			funcionarios.add(new Funcionario(1, "Roberto Souza", "Pedreiro", "03/10/1996", 60.0f));
 		}
 	}
 	

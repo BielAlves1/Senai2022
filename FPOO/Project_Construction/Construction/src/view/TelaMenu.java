@@ -13,8 +13,6 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
-import controllers.ProcessaFuncionario;
-
 public class TelaMenu extends JFrame implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
@@ -68,28 +66,25 @@ public class TelaMenu extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-//		if (e.getSource() == itemFuncionarios) {
-//			TelaFuncionario tf = new TelaFuncionario();
-//			tf.setModal(true);
-//			tf.setVisible(true);
-//		}
-//		if (e.getSource() == itemOS) {
-//			TelaOS tOs = new TelaOS();
-//			tOs.setModal(true);
-//			tOs.setVisible(true);
-//		}
-//		if (e.getSource() == itemUsuarios) {
-//			UsuarioForm tu = new UsuarioForm();
-//			tu.setModal(true);
-//			tu.setVisible(true);
-//		}
+		if (e.getSource() == itemFuncionarios) {
+			TelaFuncionario tf = new TelaFuncionario();
+			tf.setModal(true);
+			tf.setVisible(true);
+		}
+		if (e.getSource() == itemOS) {
+			TelaOS tOs = new TelaOS();
+			tOs.setModal(true);
+			tOs.setVisible(true);
+		}
+		if (e.getSource() == itemUsuarios) {
+			TelaUsuario tu = new TelaUsuario();
+			tu.setModal(true);
+			tu.setVisible(true);
+		}
 //		if (e.getSource() == itemRelatorio) {
 //			RelatorioForm tr = new RelatorioForm();
 //			tr.setModal(true);
 //			tr.setVisible(true);
 //		}
-	}
-	public static void main(String[] args) {
-		new TelaMenu().setVisible(true);
 	}
 }

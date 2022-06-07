@@ -12,7 +12,10 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
+import controllers.ProcessaFuncionario;
+import controllers.ProcessaOS;
 import controllers.ProcessaUsuario;
+import model.Cripto;
 
 
 public class TelaLogin extends JFrame implements ActionListener {
@@ -60,15 +63,30 @@ public class TelaLogin extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if(e.getSource() == login) {
-			dispose();
-			TelaMenu tm = new TelaMenu();
-			tm.setVisible(true);
+		if (e.getSource() == login) {
+			if (email.getText().length() > 0 && new String(senha.getPassword()).length() > 0) {
+				int indice = ProcessaUsuario.checarLogin(email.getText());
+				if (indice != -1) {
+					if (ProcessaUsuario.checarSenha(indice, Cripto.encripta(new String(senha.getPassword())))) {
+						this.dispose();// Fecha o Formul?rio
+						TelaMenu mf = new TelaMenu();
+						mf.setVisible(true);
+					} else {
+						JOptionPane.showMessageDialog(this, "Acesso negado!");
+					}
+				} else {
+					JOptionPane.showMessageDialog(this, "Usuário não encontrado.");
+				}
+			} else {
+				JOptionPane.showMessageDialog(this, "Preencha o email e a senha.");
+			}
 		}
 	}
 
 	public static void main(String[] args) {
 		ProcessaUsuario.abrir();
+		ProcessaFuncionario.abrir();
+		ProcessaOS.abrir();
 		TelaLogin login = new TelaLogin();
 		login.setVisible(true);
 	}

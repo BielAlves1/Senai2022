@@ -39,7 +39,7 @@ public class TelaUsuario extends JDialog implements ActionListener {
 		setIconImage(new ImageIcon(imgIco).getImage());
 		setBounds(320, 250, 470, 400);
 		painel = new JPanel(); 
-		painel.setBackground(new Color(255, 233, 213));
+		painel.setBackground(new Color(174, 238, 238));
 		setContentPane(painel); 
 		setLayout(null);
 
@@ -110,7 +110,7 @@ public class TelaUsuario extends JDialog implements ActionListener {
 	}
 
 	private void cadastrar() {
-		if (email.getText().length() > 0 && new String(senha.getPassword()).length() > 3) {
+		if (email.getText().length() > 0 && new String(senha.getPassword()).length() > 2) {
 			Usuario user = new Usuario(email.getText(), Cripto.encripta(new String(senha.getPassword())));
 			if (ProcessaUsuario.usuarios.contains(user)) {
 				JOptionPane.showMessageDialog(this, "Usuário já está cadastrado.");
@@ -121,7 +121,7 @@ public class TelaUsuario extends JDialog implements ActionListener {
 				limparCampos();
 			}
 		} else {
-			JOptionPane.showMessageDialog(this, "Preencha com um email e senha com no mínimo 4 dígito.");
+			JOptionPane.showMessageDialog(this, "Preencha com um email e senha com no mínimo 3 dígito.");
 		}
 	}
 
