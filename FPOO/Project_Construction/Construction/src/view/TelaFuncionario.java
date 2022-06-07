@@ -9,7 +9,6 @@ import java.text.SimpleDateFormat;
 import java.util.Currency;
 import java.util.Locale;
 
-import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 
@@ -18,8 +17,9 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
+import javax.swing.JTable;
 import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
 
 import controllers.ProcessaFuncionario;
 import model.Funcionario;
@@ -28,10 +28,11 @@ public class TelaFuncionario extends JFrame implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel painel;
-	private JLabel idF, funcao, nome, cargaHoraria, dataNascimento, valorHora;
-	private JTextField tfIdF, tfNome, tfCargaHoraria, tfDataNascimento, tfValorHora;
-	private JTextArea verResultados;
+	private JLabel idF, nome, funcao, dataNascimento, valorHora;
+	private JTextField tfIdF, tfNome, tfDataNascimento, tfValorHora;
 	private JScrollPane rolagem;
+	private JTable table;
+	private DefaultTableModel tableModel;
 	private JComboBox<String> cbFuncao;
 	private JButton create, read, update, delete;
 	private String texto = "";
@@ -47,54 +48,57 @@ public class TelaFuncionario extends JFrame implements ActionListener {
 		setTitle("Construction Funcionarios");
 		setBounds(150, 170, 800, 600);
 		painel = new JPanel();
-		painel.setBackground(new Color(255, 233, 213));
+		painel.setBackground(new Color(174, 238, 238));
 		setContentPane(painel);
 		setLayout(null);
 
 		idF = new JLabel("Id:");
 		idF.setBounds(20, 20, 120, 30);
 		painel.add(idF);
-		funcao = new JLabel("Função:");
-		funcao.setBounds(20, 130, 120, 30);
-		painel.add(funcao);
 		nome = new JLabel("Nome:");
 		nome.setBounds(20, 55, 120, 30);
 		painel.add(nome);
-		
-		cargaHoraria = new JLabel("Carga Horaria:");
-		cargaHoraria.setBounds(20, 165, 120, 30);
-		painel.add(cargaHoraria);
+		funcao = new JLabel("Função:");
+		funcao.setBounds(20, 95, 120, 30);
+		painel.add(funcao);
 		dataNascimento = new JLabel("Nascimento:");
-		dataNascimento.setBounds(20, 95, 120, 30);
+		dataNascimento.setBounds(20, 130, 120, 30);
 		painel.add(dataNascimento);
-		valorHora = new JLabel("Valor por Hora:");
-		valorHora.setBounds(20, 200, 120, 30);
+		valorHora = new JLabel("Valor da Diária:");
+		valorHora.setBounds(20, 165, 120, 30);
 		painel.add(valorHora);
+		
 		tfIdF = new JTextField(String.format("%d", autoId));
 		tfIdF.setEditable(false);
 		tfIdF.setBounds(140, 25, 40, 30);
 		painel.add(tfIdF);
-		cbFuncao = new JComboBox<String>(new String[] { "Eletricista", "Construtor", "Detetizador", "Cortador de grama" });
-		cbFuncao.setBounds(140, 130, 255, 30);
-		painel.add(cbFuncao);
 		tfNome = new JTextField();
 		tfNome.setBounds(140, 60, 255, 30);
 		painel.add(tfNome);
-		tfCargaHoraria = new JTextField();
-		tfCargaHoraria.setBounds(140, 165, 255, 30);
-		painel.add(tfCargaHoraria);
+		cbFuncao = new JComboBox<String>(new String[] { "Eletricista", "Construtor", "Detetizador", "Cortador de grama" });
+		cbFuncao.setBounds(140, 95, 255, 30);
+		painel.add(cbFuncao);
 		tfDataNascimento = new JTextField();
-		tfDataNascimento.setBounds(140, 95, 255, 30);
+		tfDataNascimento.setBounds(140, 130, 255, 30);
 		painel.add(tfDataNascimento);
 		tfValorHora = new JTextField();
-		tfValorHora.setBounds(140, 200, 255, 30);
+		tfValorHora.setBounds(140, 165, 255, 30);
 		painel.add(tfValorHora);
-		verResultados = new JTextArea();
-		verResultados.setEditable(false);
-		verResultados.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.BLACK));
-		preencherAreaDeTexto();
-		rolagem = new JScrollPane(verResultados);
-		rolagem.setBounds(20, 340, 740, 200);
+		
+		table = new JTable();
+		tableModel = new DefaultTableModel();
+		tableModel.addColumn("ID");
+		tableModel.addColumn("Nome");
+		tableModel.addColumn("Função");
+		tableModel.addColumn("Idade");
+		tableModel.addColumn("Diária");
+		if (ProcessaFuncionario.funcionarios.size() != 0) {
+			preencherTabela();
+		}
+		table = new JTable(tableModel);
+		table.setEnabled(false);
+		rolagem = new JScrollPane(table);
+		rolagem.setBounds(20, 310, 740, 230);
 		painel.add(rolagem);
 
 		create = new JButton("Cadastrar");
@@ -111,8 +115,6 @@ public class TelaFuncionario extends JFrame implements ActionListener {
 		painel.add(read);
 		painel.add(update);
 		painel.add(delete);
-
-		// Ouvir os eventos dos Botoes, ComboBox e outros
 		
 		create.addActionListener(this);
 		read.addActionListener(this);
@@ -121,12 +123,16 @@ public class TelaFuncionario extends JFrame implements ActionListener {
 
 	}
 	
-	private void preencherAreaDeTexto() {
-		texto = ""; // Limpar a área de texto antes de preenher
-		for (Funcionario f : ProcessaFuncionario.funcionarios) {
-			texto += f.toString();
+	private void preencherTabela() {
+		int totLinhas = tableModel.getRowCount();
+		if (tableModel.getRowCount() > 0) {
+			for (int i = 0; i < totLinhas; i++) {
+				tableModel.removeRow(0);
+			}
 		}
-		verResultados.setText(texto);
+		for (Funcionario f : ProcessaFuncionario.funcionarios) {
+			tableModel.addRow(new String[] { f.getIdF("s"), f.getNome(), f.getFuncao(), String.format("%d", f.calcIdade()), f.getDiaria("s")});
+		}
 	}
 	
 	private void cadastrar() {
@@ -138,7 +144,6 @@ public class TelaFuncionario extends JFrame implements ActionListener {
 		tfIdF.setText(null);
 		tfDataNascimento.setText(null);
 		tfValorHora.setText(null);
-		tfCargaHoraria.setText(null);
 		create.setEnabled(true);
 		update.setEnabled(false);
 		delete.setEnabled(false);
@@ -154,6 +159,4 @@ public class TelaFuncionario extends JFrame implements ActionListener {
 		ProcessaFuncionario.abrir();
 		new TelaFuncionario().setVisible(true);
 	}
-	
-	
 }

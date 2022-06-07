@@ -26,7 +26,7 @@ public class ProcessaUsuario {
 	public static int checarLogin(String email) {
 		int retorno = -1;
 		for (int i = 0; i < usuarios.size(); i++) {
-			if (usuarios.get(i).getLogin().equals(email)) {
+			if (usuarios.get(i).getEmail().equals(email)) {
 				return i;
 			}
 		}
@@ -35,7 +35,7 @@ public class ProcessaUsuario {
 
 	public static boolean checarSenha(int indice, String senha) {
 		if (usuarios.get(indice).getSenha().equals(senha)) {
-			UserConnected = usuarios.get(indice).getLogin();
+			UserConnected = usuarios.get(indice).getEmail();
 			return true;
 		}
 		return false;

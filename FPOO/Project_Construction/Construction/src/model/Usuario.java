@@ -4,25 +4,24 @@ import java.util.Objects;
 
 public class Usuario {
 	
-	private String login;
-	private String senha;
+	private String email, senha;
 	
 	
 	public Usuario(String login, String senha) {
-		this.login = login;
+		this.email = login;
 		this.senha = senha;
 	}
 
 	public Usuario(String linha) {
-		this.login = linha.split(";")[0];
+		this.email = linha.split(";")[0];
 		this.senha = linha.split(";")[1];
 	}
 	
-	public String getLogin() {
-		return login;
+	public String getEmail() {
+		return email;
 	}
-	public void setLogin(String login) {
-		this.login = login;
+	public void setEmail(String login) {
+		this.email = login;
 	}
 	public String getSenha() {
 		return senha;
@@ -33,7 +32,7 @@ public class Usuario {
 	
 	@Override
 	public int hashCode() {
-		return Objects.hash(login);
+		return Objects.hash(email);
 	}
 
 	@Override
@@ -45,16 +44,16 @@ public class Usuario {
 		if (getClass() != obj.getClass())
 			return false;
 		Usuario other = (Usuario) obj;
-		return Objects.equals(login, other.login);
+		return Objects.equals(email, other.email);
 	}
 
 	@Override
 	public String toString() {
-		return login + "\t" + senha;
+		return email + "\t" + senha;
 	}
 
 	public String toCSV() {
-		return login + ";" + senha + "\r\n";
+		return email + ";" + senha + "\r\n";
 	}
 	
 }

@@ -10,6 +10,7 @@ import java.util.Objects;
 public class OrdemServico {
 	private int idOS;
 	private String descricao, endereco;
+	private Funcionario funcionario;
 	private Date dataInicio, dataFim;
 	private Date horaInicio, horaFim;
 	private double valorOS;
@@ -23,15 +24,16 @@ public class OrdemServico {
 		this.idOS = idOS;
 	}
 
-	public OrdemServico(int idOS, String descricao, String endereco, String dataInicio, String dataFim, String horaInicio,
+	public OrdemServico(int idOS, String descricao, String endereco, String funcionario, String dataInicio, String horaInicio, String dataFim,
 			String horaFim, double valorOS) {
 		this.idOS = idOS;
 		this.descricao = descricao;
 		this.endereco = endereco;
 		try {
+			this.funcionario = new Funcionario(Integer.parseInt(funcionario));
 			this.dataInicio = df.parse(dataInicio);
-			this.dataFim = df.parse(dataFim);
 			this.horaInicio = hdf.parse(horaInicio);
+			this.dataFim = df.parse(dataFim);
 			this.horaFim = hdf.parse(horaFim);
 		} catch (ParseException e) {
 			System.out.println(e);
@@ -44,11 +46,12 @@ public class OrdemServico {
 		this.descricao = linha.split(";")[1];
 		this.endereco = linha.split(";")[2];
 		try {
-			this.dataInicio = df.parse(linha.split(";")[3]);
-			this.dataFim = df.parse(linha.split(";")[4]);
+			this.funcionario = new Funcionario(Integer.parseInt(linha.split(";")[3]));
+			this.dataInicio = df.parse(linha.split(";")[4]);
 			this.horaInicio = hdf.parse(linha.split(";")[5]);
-			this.horaFim = hdf.parse(linha.split(";")[6]);
-			this.valorOS = Double.parseDouble(linha.split(";")[7]);
+			this.dataFim = df.parse(linha.split(";")[6]);
+			this.horaFim = hdf.parse(linha.split(";")[7]);
+			this.valorOS = Double.parseDouble(linha.split(";")[8]);
 		} catch (ParseException e) {
 			System.out.println(e);
 		}
@@ -82,6 +85,18 @@ public class OrdemServico {
 		this.endereco = endereco;
 	}
 
+	public Funcionario getFuncionario() {
+		return funcionario;
+	}
+	
+	public String getFuncionario(String s) {
+		return String.format("%d", funcionario.getIdF());
+	}
+
+	public void setFuncionario(Funcionario funcionario) {
+		this.funcionario = funcionario;
+	}
+
 	public Date getDataInicio() {
 		return dataInicio;
 	}
@@ -92,18 +107,6 @@ public class OrdemServico {
 
 	public void setDataInicio(Date dataInicio) {
 		this.dataInicio = dataInicio;
-	}
-
-	public Date getDataFim() {
-		return dataFim;
-	}
-	
-	public String getDataFim(String s) {
-		return df.format(dataFim);
-	}
-
-	public void setDataFim(Date dataFim) {
-		this.dataFim = dataFim;
 	}
 
 	public Date getHoraInicio() {
@@ -118,6 +121,18 @@ public class OrdemServico {
 		this.horaInicio = horaInicio;
 	}
 
+	public Date getDataFim() {
+		return dataFim;
+	}
+	
+	public String getDataFim(String s) {
+		return df.format(dataFim);
+	}
+
+	public void setDataFim(Date dataFim) {
+		this.dataFim = dataFim;
+	}
+	
 	public Date getHoraFim() {
 		return horaFim;
 	}
@@ -161,12 +176,12 @@ public class OrdemServico {
 
 	@Override
 	public String toString() {
-		return idOS + "\t" + descricao + "\t" + endereco + "\t" + df.format(dataInicio) + "\t" + 
-	df.format(dataFim) + "\t" + hdf.format(horaInicio) + "\t" + hdf.format(horaFim) + "\t" + String.format("%.2f", valorOS) + "\n";
+		return idOS + "\t" + descricao + "\t" + endereco + "\t" + funcionario.getIdF() + "\t" + df.format(dataInicio) + "\t" + 
+				hdf.format(horaInicio) + "\t" + df.format(dataFim) + "\t" + hdf.format(horaFim) + "\t" + String.format("%.2f", valorOS) + "\n";
 	}
 	
 	public String toCSV() {
-		return idOS + ";" + descricao + ";" + endereco + ";" + df.format(dataInicio) + ";" 
-	+ df.format(dataFim) + ";" + hdf.format(horaInicio) + ";" + hdf.format(horaFim) + ";" + String.format("%.2f", valorOS) + "\r\n";
+		return idOS + ";" + descricao + ";" + endereco + ";" + funcionario.getIdF() + ";" + df.format(dataInicio) + ";" 
+	+ hdf.format(horaInicio) + ";" + df.format(dataFim) + ";" + hdf.format(horaFim) + ";" + String.format("%.2f", valorOS) + "\r\n";
 	}
 }

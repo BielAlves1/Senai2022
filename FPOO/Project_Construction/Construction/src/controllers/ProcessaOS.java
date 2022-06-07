@@ -13,7 +13,7 @@ public class ProcessaOS {
 	public static void abrir() {
 		servicos = osd.ler();
 		if(servicos.size() == 0) {
-			servicos.add(new OrdemServico(1, "Instalar fiação na casa", "Rua José Serra, 165, Jardim Andrade", "02/05/2022", "05/05/2022", "17:00", "08:00", 350.50f));
+			servicos.add(new OrdemServico(1, "Instalar fiação na casa", "Rua José Serra, 165, Jardim Andrade", "1" , "02/05/2022", "08:00", "05/05/2022", "08:00", 350.50f));
 		}
 	}
 	

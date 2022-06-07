@@ -17,19 +17,24 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
 
 import controllers.ProcessaOS;
+import model.OrdemServico;
 
 public class TelaOS extends JFrame implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel painel;
-	private JLabel id, endereco, descricao, dataInicio, dataFim, horaInicio, horaFim, valor, rotulos,imagem;
+	private JLabel id, endereco, descricao, dataInicio, dataFim, horaInicio, horaFim, valor, imagem;
 	private JTextField tfId, tfEndereco, tfDataInicio, tfDataFim, tfHoraInicio, tfHoraFim, tfValor;
 	private JScrollPane rolagem;
-	private JTextArea list, tDescricao;
+	private JTable table;
+	private DefaultTableModel tableModel;
+	private JTextArea tDescricao;
 	private JButton create, read, update, delete;
 	
 	private String imgIco = "./assets/icone.png";
@@ -45,12 +50,11 @@ public class TelaOS extends JFrame implements ActionListener {
 
 	TelaOS() {
 		setTitle("Ordem de Serviços");
-		setBounds(450, 100, 800, 600);
+		setBounds(350, 85, 850, 650);
 		setIconImage(new ImageIcon(imgIco).getImage());
 		painel = new JPanel();
 		painel.setBackground(new Color(174, 238, 238));
 		setContentPane(painel);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLayout(null);
 
 		id = new JLabel("Id:");
@@ -77,9 +81,6 @@ public class TelaOS extends JFrame implements ActionListener {
 		valor = new JLabel("Valor da OS:");
 		valor.setBounds(15, 315, 120, 30);
 		painel.add(valor);
-		rotulos = new JLabel("Id        |     Endereço       |       Descrição       |       Data Inicio       |       Hora Inicio          |         Data Fim          |          Hora Fim           |           Valor");
-		rotulos.setBounds(15, 360, 800, 30);
-		painel.add(rotulos);
 
 		tfId = new JTextField(String.format("%d", autoId));
 		tfId.setEditable(false);
@@ -107,12 +108,25 @@ public class TelaOS extends JFrame implements ActionListener {
 		tfValor = new JTextField();
 		tfValor.setBounds(90, 315, 255, 30);
 		painel.add(tfValor);
-		list = new JTextArea();
-		list.setEditable(false);
-		list.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.BLACK));
-		preencherAreaDeTexto();
-		rolagem = new JScrollPane(list);
-		rolagem.setBounds(10, 400, 765, 150);
+		
+		table = new JTable();
+		tableModel = new DefaultTableModel();
+		tableModel.addColumn("ID");
+		tableModel.addColumn("Descreção");
+		tableModel.addColumn("Endereço");
+		tableModel.addColumn("Funcionário");
+		tableModel.addColumn("Data Início");
+		tableModel.addColumn("Hora Início");
+		tableModel.addColumn("Data Fim");
+		tableModel.addColumn("Hora Fim");
+		tableModel.addColumn("Valor OS");
+		if (ProcessaOS.servicos.size() != 0) {
+			preencherTabela();
+		}
+		table = new JTable(tableModel);
+		table.setEnabled(false);
+		rolagem = new JScrollPane(table);
+		rolagem.setBounds(10, 375, 815, 230);
 		painel.add(rolagem);
 		imagem = new JLabel();
 		imagem.setBounds(405, 60, 350, 240);
@@ -146,8 +160,20 @@ public class TelaOS extends JFrame implements ActionListener {
 		icon = new ImageIcon(new ImageIcon(imagens[indice]).getImage().getScaledInstance(350, 240, 100));
 		imagem.setIcon(icon);
 	}
-
-
+	
+	private void preencherTabela() {
+		int totLinhas = tableModel.getRowCount();
+		if (tableModel.getRowCount() > 0) {
+			for (int i = 0; i < totLinhas; i++) {
+				tableModel.removeRow(0);
+			}
+		}
+		for (OrdemServico os : ProcessaOS.servicos) {
+			tableModel.addRow(new String[] { os.getIdOS("s"), os.getDescricao(), os.getEndereco(), os.getFuncionario("s"), 
+					os.getDataInicio("s"), os.getHoraInicio("s"), os.getDataFim("s"), os.getHoraFim("s"), os.getValorOS("s")});
+		}
+	}
+	
 	private void cadastrar() {
 	
 	}

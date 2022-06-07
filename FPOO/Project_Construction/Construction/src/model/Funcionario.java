@@ -123,7 +123,7 @@ public class Funcionario {
 
 	@Override
 	public String toString() {
-		return idF + "\t" + nome + "\t" + funcao + "\t" + calcIdade() + ";" + String.format("%.2f", diaria) + "\n";
+		return idF + "\t" + nome + "\t" + funcao + "\t" + calcIdade() + "\t" + String.format("%.2f", diaria) + "\n";
 	}
 	
 	public String toCSV() {

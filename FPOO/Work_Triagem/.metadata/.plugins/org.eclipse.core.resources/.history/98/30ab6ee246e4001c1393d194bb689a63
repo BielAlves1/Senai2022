@@ -1,9 +1,0 @@
-package modelo;
-
-public class Medico {
-
-	public Medico(String linha) {
-		
-	}
-
-}

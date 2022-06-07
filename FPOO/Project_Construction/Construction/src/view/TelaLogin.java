@@ -28,7 +28,7 @@ public class TelaLogin extends JFrame implements ActionListener {
 	TelaLogin() {
 
 		setTitle("Tela de Login");
-		setBounds(700, 300, 360, 200);
+		setBounds(500, 300, 360, 200);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		painel = new JPanel(); 
 		painel.setBackground(new Color(174, 238, 238));
@@ -62,8 +62,8 @@ public class TelaLogin extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == login) {
 			dispose();
-			TelaOS tos = new TelaOS();
-			tos.setVisible(true);
+			TelaMenu tm = new TelaMenu();
+			tm.setVisible(true);
 		}
 	}
 
