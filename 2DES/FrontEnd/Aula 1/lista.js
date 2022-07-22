@@ -2,7 +2,7 @@
 
 let a = prompt("Digite o valor do 1° lado do Triângulo");
 let b = prompt("Digite o valor do 2° lado do Triângulo");
-let c = prompt("Digite o valor do 3° lado do Triângulo")
+let c = prompt("Digite o valor do 3° lado do Triângulo");
 
 if(a == b && b == c){
     alert(`Triângulo Equilátero`);
