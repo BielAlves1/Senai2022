@@ -51,12 +51,12 @@ btTel.addEventListener("click", gerarTel);
 
 function gerarTel(DDD, quant){
     quant = document.querySelector("#quantTel");
+    DDD = document.querySelector("#ddd");
     let textArea = document.querySelector("#telefones");
-    DDD = 19;
 
     let i = 0;
     while(i < quant.value){
-        let tel = `(${DDD})${Math.floor(Math.random() * (99999 - 11111 + 1)) + 111111}-${Math.floor(Math.random() * (9999 - 1111 + 1)) + 1111}\n`;
+        let tel = `(${DDD.value})${Math.floor(Math.random() * (99999 - 11111 + 1)) + 111111}-${Math.floor(Math.random() * (9999 - 1111 + 1)) + 1111}\n`;
         textArea.innerHTML += tel;
         i++
     }
