@@ -56,7 +56,7 @@ function gerarTel(DDD, quant){
 
     let i = 0;
     while(i < quant.value){
-        let tel = `(${DDD.value})${Math.floor(Math.random() * (99999 - 11111 + 1)) + 111111}-${Math.floor(Math.random() * (9999 - 1111 + 1)) + 1111}\n`;
+        let tel = `(${DDD.value})9${Math.floor(Math.random() * 8999 + 1000)}-${Math.floor(Math.random() * 9999).toString().padStart(4, '0')}\n`;
         textArea.innerHTML += tel;
         i++
     }
