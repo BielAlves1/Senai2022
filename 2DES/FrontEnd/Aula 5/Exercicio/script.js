@@ -11,8 +11,12 @@ function cadastrar(){
     let colun3 = document.createElement("td");
     colun3.append("R$ ", salario.value);
 
-    document.querySelector("#tb").appendChild(linha);
+    document.querySelector("tbody").appendChild(linha);
     linha.appendChild(colun);
     linha.appendChild(colun2);
     linha.appendChild(colun3);
+
+    nome.value = null;
+    cargo.value = null;
+    salario.value = null;
 }
