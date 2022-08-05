@@ -38,12 +38,12 @@ insert into clientes values
 (null,"Guilherme","Melro","Rua Pedro Lanches II"),
 (null,"Victória","Fiatinha","É sem teto");
 
-insert into clientes values
-("(19)91997-5814"),
-("(19)97113-8936"),
-("(19)92548-6697"),
-("(19)93021-4902"),
-("(19)94220-0099");
+insert into telefones values
+(1, "(19)91997-5814"),
+(2, "(19)97113-8936"),
+(2, "(19)92548-6697"),
+(1, "(19)93021-4902"),
+(3, "(19)94220-0099");
 
 insert into pedidos values
 (null, 1, null, 5, "Pastel de Flango", 2),
