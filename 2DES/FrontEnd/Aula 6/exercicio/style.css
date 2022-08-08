@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-.item-carrinho {
+.info-funcionario {
     width: 80vw;
     height: 10vh;
     border: 1px solid gray;
@@ -16,12 +16,12 @@
     padding: 0 15px;
 }
 
-#img-item {
+#img-funcionario {
     width: 8vh;
     height: 8vh;
 }
 
-.item-carrinho > button > img {
+.info-funcionario > button > img {
     width: 32px;
 }
 
