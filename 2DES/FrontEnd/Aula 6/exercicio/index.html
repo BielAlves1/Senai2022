@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css" class="rel">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
-<body onLoad="carregar()">
+<body onLoad="load()">
     <div class="funcionario">
         <div class="info-funcionario model">
             <p id="nome-funcionario">Nome Funcionario</p>
-            <div id="cargo">
-                <p id="cargo-funcionario"></p>
-                <p id="nivel-funcionario"></p>
-            </div>
+            <p id="cargo"></p>
+            <p id="nivel"></p>
             <p id="autoriza"></p>
-            <button onClick="removerItem(this)"><img src="https://cdn0.iconfinder.com/data/icons/building-signage-01/204/icon_trash-512.png"></button>
+            <p class="adm model">ADM</p>
+            <p class="leitor model">LEITOR</p>
+            <button onClick="removerFuncionario(this)" class="btRemover model"><img src="https://cdn0.iconfinder.com/data/icons/building-signage-01/204/icon_trash-512.png"></button>
         </div>
     </div>
 </body>
