@@ -5,13 +5,21 @@
 }
 header{
     width: 100vw;
-    height: 7vh;
+    height: 10vh;
     background-color: rgb(214, 214, 214);
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
-header p, img {
+.profile {
+    display: flex;
+}
+.profile p {
     margin: 20px;
+}
+.profile img{
+    margin: 5px;
+    width: 50px;
+    height: 50px;
 }
 .option{
     display: flex;  
@@ -21,7 +29,7 @@ header p, img {
 }
 main{
     width: 100vw;
-    height: 93vh;
+    height: 90vh;
     background-color: #ffffff;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
@@ -29,13 +37,31 @@ main{
     align-items: center;
 }
 .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction:row;
+    margin: 25%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
 }
 .prod {
-    width: 30%;
-    height: 300px;
+    width: 215px;
+    height: 245px;
     background-color: rgb(255, 215, 222);
+}
+.prod > img{
+    width: 175px;
+    height: 140px;
+}
+.infoProd {
+    background-color: rgb(214, 214, 214);
+    display: flex;
+    justify-content: space-between;
+}
+.infoProd > div > p{
+    margin: 10px;
+}
+.infoProd > img{
+    width: 40px;
+    height: 25px;
 }
