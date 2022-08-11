@@ -35,4 +35,7 @@ body{
 #password {
     margin-top: 5%;
 }
+.model {
+    visibility: hidden;
+}
 
