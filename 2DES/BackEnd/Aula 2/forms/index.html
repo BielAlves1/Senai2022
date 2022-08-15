@@ -10,17 +10,15 @@
 <body>
     <main>
         <div class="container">
-            <form class="forms" action="http://localhost:3000/pedidos">
+            <form class="forms" action="http://localhost:3000/pedidos" method="post">
                 <label>Primeiro Nome:</label>
-                <input type="text" id="pNome" name="nome" placeholder="Maria">
+                <input type="text" name="nome" placeholder="Jão" required>
                 <label>Sobrenome:</label>
-                <input type="text" id="sNome" name="sobrenome" placeholder="Silva">
+                <input type="text" name="sobrenome" placeholder="Silva" required>
                 <label>Endereço:</label>
-                <input type="text" id="endereco" name="endereco" placeholder="Rua Antonio Fanti, 173">
-                <label>ID:</label>
-                <input type="text" id="id" name="id" placeholder="1">
+                <input type="text" name="endereco" placeholder="Rua e Número" required>
                 <label>Telefones:</label>
-                <input type="text" id="tell" cols="30" rows="10" name="telefones" placeholder="(19) 99849-8669"></input>
+                <textarea type="text" cols="30" rows="10" name="telefones" placeholder="(19) 99849-8669" required></textarea>
                 <button type="submit" id="btCad">Cadastrar</button>
             </form>
         </div>

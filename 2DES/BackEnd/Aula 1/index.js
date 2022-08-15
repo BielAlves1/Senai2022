@@ -3,7 +3,7 @@ const app = express();
 
 app.use(express.json());
 
-app.get('/aula1',(req, res)=>{
+app.get('/aula-1',(req, res)=>{
     res.json("Alô mundo");
 });
 

@@ -2,7 +2,7 @@ const usuarios = [
     {
         "usuario":"shrekão",
         "senha":"123",
-        "imagem":"../img/shrek.png"
+        "imagem":"../img/shrek.jpg"
     },
     {
         "usuario":"SeilaMano",
@@ -14,7 +14,7 @@ const usuarios = [
         "senha":"666",
         "imagem":""
     }
-]
+];
 
 const produtos = [
     {
@@ -82,9 +82,9 @@ function load() {
 
         var url = new URLSearchParams(window.location.search);
         usuarios.forEach(user => {
-            if (user.username == url.get('username')) {
+            if (user.usuario == url.get('usuario')) {
                 document.querySelector(".nomeUser").innerHTML = user.usuario;
-                document.querySelector(".fotoUser").style.backgroundImage = "url(" + user.imagem + ")";
+                document.querySelector(".fotoUser").style.backgroundImage = "url(" + usuario.imagem + ")";
             }
         });
 

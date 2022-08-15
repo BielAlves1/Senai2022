@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+main{
+    width: 100vh;
+    height: 100vh;
+}
+.container{
+    margin: 25%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+}
+.info-card{
+    height: 250px;
+    width: 250px;
+    border: solid 1px;
+}
+.model {
+    visibility: hidden;
+    display: none;
+}
