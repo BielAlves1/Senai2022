@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #ffffff;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.container input{
+    border: none;
+    border-bottom-style: ridge;
+}
+.container button{
+    margin-top: 2%;
+    width: 18%;
+    height: 30px;
+    border-radius: 50px;
+    border: none;
+    background-color: rgb(214, 214, 214)
+}
+#password {
+    margin-top: 5%;
+}
+.model {
+    visibility: hidden;
+}
+.trataErro {
+    margin-top: 5%;
+    color: red;
+}
+

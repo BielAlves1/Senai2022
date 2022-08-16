@@ -4,20 +4,20 @@ fetch("https://jsonplaceholder.typicode.com/todos").then((response) => {
 }).then((data) => {
     data.forEach(cliente => {
         let novoCard = document.querySelector(".info-card").cloneNode(true);
+        novoCard.classList.remove("model");
 
-        novoProduto.querySelector("#idU").innerHTML = cliente.userId;
-        novoProduto.querySelector("#title").innerHTML = cliente.title;
-        novoProduto.querySelector("#check").innerHTML = cliente.completed;
-        novoProduto.classList.remove("modelo");
+        novoCard.querySelector("#idU").append(cliente.userId);
+        novoCard.querySelector("#title").append(cliente.title);
 
+        let check = novoCard.querySelector("#check");
         if(cliente.completed === true) {
+            check.append(cliente.completed);
             check.checked = true;
-            document.querySelector(".info-cliente").appendChild(check);
         }else {
-            document.querySelector(".info-cliente").appendChild(check);
+            check.append(cliente.completed);
+            check.checked = false;
         }
 
-        document.querySelector(".info-cliente").appendChild(userID);
-        document.querySelector(".info-cliente").appendChild(title);
+        document.querySelector(".container").appendChild(novoCard);
     })
 });

@@ -3,24 +3,38 @@
     padding: 0;
     box-sizing: border-box;
 }
-main{
+body{
     width: 100vh;
     height: 100vh;
+    background-color: rgb(45, 153, 185);
 }
 .container{
     margin: 25%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 30px;
-    grid-row-gap: 30px;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 25px;
+    grid-row-gap: 25px;
+    background-color: rgb(45, 153, 185);
 }
 .info-card{
-    height: 250px;
-    width: 250px;
+    height: 150px;
+    width: 200px;
     border: solid 1px;
+    display: flex   ;
+    flex-direction: column;
+    background-color: rgba(41, 180, 223, 0.856);
 }
 .model {
     visibility: hidden;
     display: none;
+}
+.info-card h1 {
+    margin-left: 45%;
+}
+.info-card p {
+    margin-left: 5%;
+}
+.info-card p, input{
+    margin-top: 10%;
 }
