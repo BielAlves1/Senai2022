@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cadastro</title>
+</head>
+<body>
+    <div class="container">
+        <form id="form">
+            <input type="text" id="nome" placeholder=" Seu Nome">
+            <input type="email" id="email" placeholder=" Seu Email">
+            <input type="password" id="senha" placeholder=" Sua Senha">
+            <input type="email" id="senhaR" placeholder=" Repita Sua Senha">
+            <input type="tel" id="tel" placeholder=" Seu Telefone">
+            <input type="text" id="cep" placeholder=" Seu CEP" onKeyup="validandoCEP()">
+            <input type="text" id="logra" placeholder=" Logradouro" readonly>
+            <input type="text" id="complemento" placeholder=" Complemento" readonly>
+            <input type="text" id="bairro" placeholder=" Bairro" readonly>
+            <input type="text" id="cidade" placeholder=" Cidade" readonly>
+            <input type="text" id="estado" placeholder=" Estado" readonly>
+            <button type="submit" onClick="cadastrar()"></button>
+        </form>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>

@@ -19,6 +19,7 @@ body{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    background-color: rgb(4, 171, 212);
 }
 .container input{
     border: none;
@@ -33,7 +34,7 @@ body{
     background-color: rgb(214, 214, 214)
 }
 #password {
-    margin-top: 5%;
+    margin-top: 2%;
 }
 .model {
     visibility: hidden;
