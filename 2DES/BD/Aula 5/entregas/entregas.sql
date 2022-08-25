@@ -57,3 +57,57 @@ describe pedidos;
 describe itens;
 
 show tables;
+
+LOAD DATA INFILE 'D:/Gabriel Alves/Senai2022/2DES/BD/Aula 5/entregas/clientes.CSV'
+INTO TABLE clientes
+FIELDS TERMINATED BY ';'
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 ROWS;
+
+select * from clientes;
+
+LOAD DATA INFILE 'D:/Gabriel Alves/Senai2022/2DES/BD/Aula 5/entregas/telefones.CSV'
+INTO TABLE telefones
+FIELDS TERMINATED BY ';'
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 ROWS;
+
+select * from telefones;
+
+LOAD DATA INFILE 'D:/Gabriel Alves/Senai2022/2DES/BD/Aula 5/entregas/entregadores.CSV'
+INTO TABLE entregadores
+FIELDS TERMINATED BY ';'
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 ROWS;
+
+select * from entregadores;
+
+LOAD DATA INFILE 'D:/Gabriel Alves/Senai2022/2DES/BD/Aula 5/entregas/produtos.CSV'
+INTO TABLE produtos
+FIELDS TERMINATED BY ';'
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 ROWS;
+
+select * from produtos;
+
+LOAD DATA INFILE 'D:/Gabriel Alves/Senai2022/2DES/BD/Aula 5/entregas/pedidos.CSV'
+INTO TABLE pedidos
+FIELDS TERMINATED BY ';'
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 ROWS;
+
+select * from pedidos;
+
+LOAD DATA INFILE 'D:/Gabriel Alves/Senai2022/2DES/BD/Aula 5/entregas/itens.CSV'
+INTO TABLE itens
+FIELDS TERMINATED BY ';'
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 ROWS;
+
+select * from itens;
