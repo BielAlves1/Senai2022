@@ -34,7 +34,7 @@ insert into clientes values(6,"Jurema de Souza Castro","2007-06-15","F",80);
 select * from clientes;
 
 -- Importação de arquivos CSV
-LOAD DATA INFILE 'D:/Gabriel Alves/Senai2022/2DES/BackEnd/Aula 4/docs/telefones.csv'
+LOAD DATA INFILE 'D:/Gabriel Alves/Senai2022/2DES/BackEnd/Aula04/clientes/docs/telefones.csv'
 INTO TABLE telefones
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
@@ -48,3 +48,5 @@ create view vw_clientes as
 select c.id_cliente, c.nome, c.nascimento, c.sexo, c.peso, t.numero as telefone from clientes c
 inner join telefones t
 on c.id_cliente = t.id_cliente;
+
+select * from vw_clientes;
