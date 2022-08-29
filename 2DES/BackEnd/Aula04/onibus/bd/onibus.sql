@@ -36,7 +36,7 @@ describe mot_linhas;
 
 show tables;
 
-LOAD DATA INFILE 'D:\Gabriel Alves\Senai2022\2DES\BackEnd\Aula04\onibus\bd\motoristas.CSV'
+LOAD DATA INFILE 'D:/Gabriel Alves/Senai2022/2DES/BackEnd/Aula04/onibus/bd/motoristas.CSV'
 INTO TABLE motoristas
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
@@ -45,7 +45,7 @@ IGNORE 1 ROWS;
 
 select * from motoristas;
 
-LOAD DATA INFILE 'D:\Gabriel Alves\Senai2022\2DES\BackEnd\Aula04\onibus\bd\telefones.CSV'
+LOAD DATA INFILE 'D:/Gabriel Alves/Senai2022/2DES/BackEnd/Aula04/onibus/bd/telefones.CSV'
 INTO TABLE telefones
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
@@ -54,7 +54,7 @@ IGNORE 1 ROWS;
 
 select * from telefones;
 
-LOAD DATA INFILE 'D:\Gabriel Alves\Senai2022\2DES\BackEnd\Aula04\onibus\bd\linhas.CSV'
+LOAD DATA INFILE 'D:/Gabriel Alves/Senai2022/2DES/BackEnd/Aula04/onibus/bd/linhas.CSV'
 INTO TABLE linhas
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
@@ -63,7 +63,7 @@ IGNORE 1 ROWS;
 
 select * from linhas;
 
-LOAD DATA INFILE 'D:\Gabriel Alves\Senai2022\2DES\BackEnd\Aula04\onibus\bd\horarios.CSV'
+LOAD DATA INFILE 'D:/Gabriel Alves/Senai2022/2DES/BackEnd/Aula04/onibus/bd/horarios.CSV'
 INTO TABLE horarios
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
@@ -72,7 +72,7 @@ IGNORE 1 ROWS;
 
 select * from horarios;
 
-LOAD DATA INFILE 'D:\Gabriel Alves\Senai2022\2DES\BackEnd\Aula04\onibus\bd\mot_linhas.CSV'
+LOAD DATA INFILE 'D:/Gabriel Alves/Senai2022/2DES/BackEnd/Aula04/onibus/bd/mot_linha.CSV'
 INTO TABLE mot_linhas
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
@@ -81,9 +81,9 @@ IGNORE 1 ROWS;
 
 select * from mot_linhas;
 
-create view vw_motoristas as
-select  as telefone from clientes c
+create view vw_motoristas  as
+select m.cpf, m.nome, t.numero from motoristas m
 inner join telefones t
-on c.id_cliente = t.id_cliente;
+on m.cpf = t.cpf;
 
 select * from vw_motoristas;

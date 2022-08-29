@@ -101,7 +101,7 @@ on a.id_aluno = t.id_aluno;
 select * from vw_alunos;
 
 create view vw_exercicios as
-select ap.id_aparelho, ap.nome, e.id_exercicio, e.descricao, e.grupo_muscular from aparelhos ap
+select e.id_exercicio, e.descricao, e.grupo_muscular, ap.id_aparelho, ap.nome from aparelhos ap
 inner join exercicios e
 on ap.id_aparelho = e.id_aparelho;
 

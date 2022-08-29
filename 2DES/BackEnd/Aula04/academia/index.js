@@ -10,6 +10,8 @@ const con = mysql.createConnection({
     database: 'academia'
 });
 
+app.use(cors());
+
 app.get('/academia/alunos',(req,res)=>{
     let string = "select * from vw_alunos";
     con.query(string,(err,result)=>{
@@ -30,6 +32,15 @@ app.get('/academia/aparelhos',(req,res)=>{
 
 app.get('/academia/exercicios',(req,res)=>{
     let string = "select * from exercicios";
+    con.query(string,(err,result)=>{
+        if(err == null){
+            res.json(result);
+        }
+    });
+});
+
+app.get('/academia/treinos',(req,res)=>{
+    let string = "select * from vw_exercicios";
     con.query(string,(err,result)=>{
         if(err == null){
             res.json(result);
