@@ -1,56 +1,53 @@
-const usuarios = [
-  {
-  img: require("./assets/random.jfif"),
-  nome:"Daniel Cimenton",
-  cargo:"admin"
-  },
-  {
-    img:require("./assets/random2.jfif"),
-    nome:"Fernando Silva",
-    cargo:"developer"
-  },
-  {
-    img:require("./assets/random3.jfif"),
-    nome:"Isabela",
-    cargo:"comum"
-  },
-];
-
 import {View, Text, StyleSheet, Image, TextInput, Button, TouchableOpacity} from 'react-native';
 
-export default function App() {
-  // const imgGato = require('./assets/gato.jpg');
-  // const trashIcon = require('./assets/lixo.png'); 
+export default function App() {  
+  const usuarios = [
+    {
+      "nome":"Fulano",
+      "matricula":"12345"
+    },
+    {
+      "nome":"Beltrano",
+      "matricula":"54321"
+    },
+    {
+      "nome":"Ciclano",
+      "matricula":"124578"
+    }
+  ];
+
+  const imgGatin = require('./assets/gatin.jpeg');
+  const trashIcon = require('./assets/trash.png');
 
   return(
-    // <View style={style.container}>
-    //   <View style={style.primeira}>
-    //     <Text>Olá, Mundo!</Text>
-    //     <TextInput style={style.input} placeholder="Email"/>
-    //     <Button title="Enviar" />
-    //     <TouchableOpacity style={style.btExclui}>
-    //       <Image style={{width: '32px', height: '32px'}} source={trashIcon} />
-    //       <Text>Apagar Registro</Text>
-    //     </TouchableOpacity>
-    //   </View>
-    //   <View style={style.segunda}>
-    //     <Text>Minha Segunda View</Text>
-    //     <Image style={style.imgAnimal} source={imgGato} />
-    //     <Image style={style.imgAnimal} source={{uri:'https://pbs.twimg.com/profile_images/1479284343273140227/jnO7MNMt_400x400.jpg'}} />
-    //   </View>
-    // </View>
     <View style={style.container}>
-      <View style={style.content}>
-        {usuarios.map((user) => {
-          return (
-          <TouchableOpacity style={style.info}>
-            <Image style={style.imgUser} source={{uri:user.img}}/>
-            <Text>{user.nome}</Text>
-            <Text>{user.cargo}</Text>
-          </TouchableOpacity>
-          );
-        })
+      <View style={style.primeira}>
+        <Text>Bem vindo, Fulano</Text>
+        <TextInput style={style.input} placeholder="Email"/>
+        <Button title="Cadastrar" />
+        <TouchableOpacity style={style.btExclui}>
+          <Image style={{width: '32px', height: '32px'}} source={trashIcon}/>
+          <Text>Apagar Registro</Text>
+        </TouchableOpacity>
+        {
+          usuarios.map(usuario => {
+            return (
+              // <View>
+              //   <Text>{usuario.matricula}</Text>
+              //   <Text>{usuario.nome}</Text>
+              // </View>
+              // <Text>{`${usuario.matricula} - ${usuario.nome}`}</Text>
+              <TouchableOpacity style={style.btExclui}>
+                <Text>{`${usuario.matricula} - ${usuario.nome}`}</Text>
+              </TouchableOpacity>
+            )
+          })
         }
+      </View>
+      <View style={style.segunda}>
+        <Text>Minha Segunda View</Text>
+        <Image style={style.imgAnimal} source={imgGatin} />
+        <Image style={style.imgAnimal} source={{uri:'https://conteudo.imguol.com.br/c/entretenimento/54/2020/04/28/cachorro-pug-1588098472110_v2_1x1.jpg'}} />
       </View>
     </View>
   );
@@ -62,43 +59,29 @@ const style = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  content: {
+  primeira: {
     flex: 1,
     backgroundColor: '#F1D2E7'
   },
-  info: {
-    display: 'flex',
+  segunda: {
+    flex: 1,
+    backgroundColor: '#E2F5C8'
+  },
+  imgAnimal: {
+    width: '200px',
+    height: '200px',
+  },
+  input : {
+    borderBottomWidth: '1px',
+    borderBottomColor: 'gray',
+    padding: '10px',
+  },
+  btExclui: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-around',
-    backgroundColor: 'gray',
-    border: '2px solid black',
+    justifyContent: 'center',
+    backgroundColor: '#FCFFA6',
+    border: '2px solid #adffa6',
     borderRadius: '10px',
-  },
-  imgUser: {
-    width: '100px',
-    height: '100px',
-    borderRadius: '50px'
   }
-  // segunda: {
-  //   flex: 4,
-  //   backgroundColor: '#E2F5C8'
-  // },
-  // imgAnimal: {
-  //   width: '350px',
-  //   height: '350px',
-  // },
-  // input: {
-  //   borderBottomWidth: '1px',
-  //   borderBottomColor: 'red',
-  //   padding: '10px',
-  // },
-  // btExclui: {
-  //   flexDirection: 'row',
-  //   alignItems: 'center',
-  //   justifyContent: 'center',
-  //   backgroundColor: '#FCFFA6',
-  //   border: '2px solid #adffa6',
-  //   borderRadius: '10px',
-  // }
 });
