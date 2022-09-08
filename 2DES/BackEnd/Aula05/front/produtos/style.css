@@ -1,18 +1,23 @@
-.card {
-    margin-top: 3%;
-    border: 2px solid #F5F5;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.produto {
+    border: 1px solid #F5F5;
     border-radius: 20px;
     width: 150px;
     padding: 30px;
+    margin: 15px;
 }
-.card:hover{
-    color: white;
-}
+
 .model {
     display: none;
     visibility: hidden;
 }
-.modal{
+
+.modal {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,24 +26,24 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgb(0, 0, 0, .5);
+    background-color: rgba(0,0,0,.5);
 }
-.form-modal{
+
+.form-modal {
     width: 50%;
     height: 50%;
-    background-color:white;
+    background-color: #FFF;
     border-radius: 30px;
     position: relative;
     display: flex;
     flex-direction: column;
-    padding: 60px  120px;
+    padding: 60px 120px;
 }
 
-.form-modal > input, button {
-    margin: 15px;
-    height: 30px;
-    border-radius: 15px;
+.form-modal > input , button{
+    margin: 15px 0;
 }
+
 #cancel {
     position: absolute;
     top: 20px;

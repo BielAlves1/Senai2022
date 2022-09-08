@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    text-align: center;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.content button {
+    width: 25px;
+    height: 25px;
+}
+
+.foot {
+    display: flex;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    justify-content: center;
+}
+.model {
+    visibility: hidden;
+    display: none;
+}

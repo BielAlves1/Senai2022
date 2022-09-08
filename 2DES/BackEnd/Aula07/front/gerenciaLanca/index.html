@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Loja Japa</title>
+</head>
+<body>
+    <h1>Livro Caixa</h1>
+    <hr>
+    <div class="content">
+        <label>Filtro</label>
+        <input type="date" id="filtro">
+        <label>Novo Lançamento</label>
+        <button id="btnLanca">+</button>
+    </div>
+    <hr>
+    <div class="container">
+        <div class="tab1">
+            <h3>Debitos</h3>
+            <table class="debTB" border="1px">
+                <thead>
+                    <tr>
+                        <th>N_Lançamento</th>
+                        <th>Data</th>
+                        <th>Descrição</th>
+                        <th>Valor</th>
+                        <th>Tipo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="info model">
+                        <td>1</td>
+                        <td>2022-06-03</td>
+                        <td>Cafezinho</td>
+                        <td>R$12,00</td>
+                        <td>Saída</td>
+                    </tr>
+                </tbody>
+            </table>   
+        </div> 
+        <div class="tab2">
+            <h3>Créditos</h3>
+            <table class="credTB" border="1px">
+                <thead>
+                    <tr>
+                        <th>N_Lançamento</th>
+                        <th>Data</th>
+                        <th>Descrição</th>
+                        <th>Valor</th>
+                        <th>Tipo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="info model">
+                        <td>15</td>
+                        <td>2022-06-03</td>
+                        <td>Venda à vista</td>
+                        <td>R$200,00</td>
+                        <td>Entrada</td>
+                    </tr>
+                </tbody>
+            </table>   
+        </div> 
+    </div>
+    <footer>
+        <div class="foot">
+            <h3>Saldo Acumulado:</h3>
+            <h3>R$ 32432.00</h3>
+        </div>
+    </footer>
+</body>
+<script src="script.js"></script>
+</html>
