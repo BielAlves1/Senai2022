@@ -19,14 +19,19 @@ body{
 .content button {
     width: 25px;
     height: 25px;
+    align-items: center;
 }
 
 .foot {
+    border-top: solid 2px;
     display: flex;
     bottom: 0;
     position: fixed;
     width: 100%;
+    height: 10vh;
+    background-color: white;
     justify-content: center;
+    align-items: center;
 }
 .model {
     visibility: hidden;

@@ -7,14 +7,16 @@
     <link rel="stylesheet" href="style.css">
     <title>Loja Japa</title>
 </head>
-<body>
+<body onLoad="loadLanca()">
     <h1>Livro Caixa</h1>
     <hr>
     <div class="content">
         <label>Filtro</label>
-        <input type="date" id="filtro">
+        <select>
+            <option value="banana" selected>Banana</option>
+        </select>
         <label>Novo Lançamento</label>
-        <button id="btnLanca">+</button>
+        <button id="btnLanca"> + </button>
     </div>
     <hr>
     <div class="container">
@@ -30,7 +32,7 @@
                         <th>Tipo</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="tbody1">
                     <tr class="info model">
                         <td>1</td>
                         <td>2022-06-03</td>
@@ -53,7 +55,7 @@
                         <th>Tipo</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="tbody2">
                     <tr class="info model">
                         <td>15</td>
                         <td>2022-06-03</td>
