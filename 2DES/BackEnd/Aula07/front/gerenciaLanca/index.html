@@ -8,22 +8,23 @@
     <title>Loja Japa</title>
 </head>
 <body onLoad="loadLanca()">
-    <h1>Livro Caixa</h1>
+    <header>
+        <h1>Livro Caixa</h1>
     <hr>
     <div class="content">
         <label>Filtro</label>
-        <select>
-            <option value="banana" selected>Banana</option>
+        <select name="data" id="data" onClick="opcoes()" onChange="mudar()">
+            <option id="selected-data"></option>
         </select>
         <label>Novo Lançamento</label>
-        <button id="btnLanca"> + </button>
+        <button id="btnLanca" onClick="showModal()"> + </button>
     </div>
-    <hr>
+    </header>
     <div class="container">
         <div class="tab1">
-            <h3>Debitos</h3>
-            <table class="debTB" border="1px">
+            <table border="1px">
                 <thead>
+                    <caption>Debito</caption>
                     <tr>
                         <th>N_Lançamento</th>
                         <th>Data</th>
@@ -42,11 +43,11 @@
                     </tr>
                 </tbody>
             </table>   
-        </div> 
+        </div>
         <div class="tab2">
-            <h3>Créditos</h3>
-            <table class="credTB" border="1px">
+            <table class="tab2" border="1px">
                 <thead>
+                    <caption>Crédito</caption>
                     <tr>
                         <th>N_Lançamento</th>
                         <th>Data</th>
@@ -64,15 +65,32 @@
                         <td>Entrada</td>
                     </tr>
                 </tbody>
-            </table>   
-        </div> 
+            </table>
+        </div>   
     </div>
     <footer>
-        <div class="foot">
-            <h3>Saldo Acumulado:</h3>
-            <h3>R$ 32432.00</h3>
-        </div>
+        <h3>Saldo Acumulado:</h3>
+        <h3 id="saldoTotal">R$ 32432.00</h3>
     </footer>
+    <div class="modal model">
+        <div class="modal-content">
+            <div class="modal-content-header">
+                <h3>Novo Lançamento</h3>
+                <button onClick="fecharModal()" class="btFechar">X</button>
+            </div>
+            <div class="modal-content-body">
+                <input type="text" id="descricao" placeholder="Digite a Descrição">
+                <select id="selectTipo" name="Tipo">
+                    <option id="idD" value="D">Saída</option>
+                    <option id="idC" value="C">Entrada</option>
+                  </select>
+                <input type="number" id="valor" placeholder="Digite o Valor">
+            </div>
+            <div class="modal-content-footer">  
+                <button onClick="cadastrarLancamento()" class="btEnviar">Enviar</button>
+            </div>
+        </div>
+    </div>
 </body>
 <script src="script.js"></script>
 </html>

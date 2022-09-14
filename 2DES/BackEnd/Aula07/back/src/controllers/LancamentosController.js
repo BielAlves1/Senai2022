@@ -8,7 +8,6 @@ const connect = mysql.createConnection({
 
 function listarLancamentos(req, res) {
     let query = "SELECT * FROM lancamentos";
-
     connect.query(query, (err, result) => {
         if(err == null) {
             res.json(result).status(200).end();
@@ -20,7 +19,6 @@ function listarLancamentos(req, res) {
 
 function listaLancamento(req, res) {
     let query = `SELECT * FROM lancamentos WHERE data = '${req.params.data}'`;
-    
     connect.query(query, (err, result) => {
         if(err == null) {
             res.status(200).json(result).end();
@@ -31,8 +29,7 @@ function listaLancamento(req, res) {
 };
 
 function cadastrarLancamento(req, res) {
-    let query = `INSERT INTO lancamentos VALUES (DEFAULT, DEFAULT, '${req.body.descricao}', ${req.body.valor}, '${req.body.tipo}')`;
-
+    let query = `INSERT INTO lancamentos VALUES (DEFAULT, CURDATE(), '${req.body.descricao}', ${req.body.valor}, '${req.body.tipo}')`;
     connect.query(query, (err, result) => {
         if(err == null) {
             res.status(201).json(req.body).end();

@@ -20,7 +20,7 @@ CREATE TABLE locacoes (
    cod_cli INTEGER NOT NULL,
    cod_filme INTEGER NOT NULL,
    data_locacao DATE NOT NULL,
-   data_devolucao DATE NOT NULL,
+   data_devolucao DATE,
    foreign key (cod_cli) references clientes(cod_cli),
    foreign key (cod_filme) references filmes(cod_filme)
 );
