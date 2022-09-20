@@ -39,10 +39,8 @@ show tables;
 insert into clientes values(1,"Janaína Costa","Rua do Mel, 25  ","Zambom","Jaguariúna","SP");
 insert into clientes values(2,"Jurema Andrade","Rua do Açúcar, 45  ","Centro","Jaguariúna","SP");
 insert into clientes values(3,"Márcio Garcia","Rua do Milho, 45  ","Santa Cruz","Jaguariúna","SP");
-insert into clientes values(3,"Márcio Garcia","Rua do Milho, 45  ","Santa Cruz","Jaguariúna","SP");
 insert into clientes values(4,"Estevão Marques","Rua dos Amores Pe rdidos , 21","Vargeão","Jaguariúna","SP");
 insert into clientes values(5,"Mariana Silva","Rua do Sentido da Vida, 42","Zambom","Jaguariúna","SP");
-insert into clientes values(6,"João Silva","Rua da sorte, 13  ","Centro","Jaguariúna","SP");
 insert into clientes values(6,"João Silva","Rua da sorte, 13  ","Centro","Jaguariúna","SP");
 insert into clientes values(7,"José Aldo","Rua das Azaléias, 25 ","Santa Cruz","Jaguariúna","SP");
 
