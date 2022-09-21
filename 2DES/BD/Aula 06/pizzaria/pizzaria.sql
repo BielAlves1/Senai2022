@@ -637,6 +637,7 @@ update Pedidos set valor=(select sum(quantidade * valor) from Itens_Pedido where
 update Pedidos set valor=(select sum(quantidade * valor) from Itens_Pedido where pedido_id = 24) where pedido_id = 24;
 update Pedidos set valor=(select sum(quantidade * valor) from Itens_Pedido where pedido_id = 25) where pedido_id = 25;
 update Pedidos set valor=(select sum(quantidade * valor) from Itens_Pedido where pedido_id = 26) where pedido_id = 26;
+update Pedidos set valor=(select sum(quantidade * valor) from Itens_Pedido where pedido_id = 27) where pedido_id = 27;
 
 select * from Clientes;
 select * from Pizzas;
@@ -647,3 +648,54 @@ select * from Itens_Pedido;
 -- Mostrar todas as tabelas no fim do script
 show tables;
 
+
+
+SELECT * FROM Clientes WHERE nome = "Cesar Augusto Pascali Rago";
+SELECT * FROM Telefones WHERE cliente_id = 12;
+-- Telefones dele -> 1930031664 | 1930025914 | 1930029833 | 1930030615
+DELETE FROM Telefones WHERE cliente_id = 12;
+SELECT * FROM Telefones WHERE cliente_id = 12;
+-- Retornou Empty pois apagamos todos os telefones do id = 12
+insert into Telefones values (12, "19991865503");
+SELECT * FROM Telefones WHERE cliente_id = 12;
+-- Telefone Inserido com sucesso
+
+create view vw_clientes as
+select c.Cliente_id, c.nome, c.logradouro, c.numero, c.complemento, c.bairro, c.referencia, t.telefone from Clientes c
+inner join Telefones t
+on c.Cliente_id = t.cliente_id;
+
+select * from vw_clientes;
+
+insert into Clientes(nome, logradouro, numero, complemento, bairro, referencia) value
+("Joaquim Inácio Silva","Rua Angélica Lima",334,null,"Centro",null);
+
+insert into Telefones value(107, "19989995511");
+
+insert into Pedidos(cliente_id, data, hora) values(17,curdate(),"08:30:00");
+
+SELECT * FROM Pedidos;
+
+insert into Itens_Pedido(pedido_id, pizza_id, quantidade, valor) values(27,6,1, (select valor from Pizzas where pizza_id = 6));
+insert into Itens_Pedido(pedido_id, pizza_id, quantidade, valor) values(27,5,1, (select valor from Pizzas where pizza_id = 5));
+
+SELECT * FROM Itens_Pedido;
+
+describe clientes;
+describe telefones;
+describe pedidos;
+describe pizzas;
+describe Itens_Pedido;
+
+select * from pedidos where cliente_id = (select cliente_id from clientes where nome = "Cesar Augusto Pascali Rago");
+-- O últtimo pedido do Cesar foi em 2022-09-15, e o valor do pedido é 354.71, o pedido_id é o 22
+
+select * from Itens_Pedido where pedido_id = 22;
+--Ele pediu 11 pizzas e 4 tipos de sabores diferentes.
+
+create view vw_itens as
+select it.pedido_id, it.pizza_id, p.nome, it.quantidade, it.valor from Itens_Pedido it 
+join pizzas p
+on it.pizza_id = p.pizza_id;
+
+SELECT * FROM vw_itens order by pedido_id;
