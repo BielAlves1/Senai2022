@@ -5,6 +5,7 @@
 . Abrir com visual code a pasta;
 . Abrir o terminal cmd;
 - npm i -g expo-cli
+ou - npm i -g react-native expo-cli
 - expo init nomeDoProjeto
 
 ------------
@@ -20,5 +21,6 @@ Caso dê problema, utilizar o comando:
 -npm i --force --web
 
 https://reactnavigation.org/      <= Link para o site reactnavigation e utilizar os comandos de instalação
+- npm i -g yarn
 - npx expo install react-native-web@~0.18.7 react-dom@18.0.0 @expo/webpack-config@^0.17.0
 
