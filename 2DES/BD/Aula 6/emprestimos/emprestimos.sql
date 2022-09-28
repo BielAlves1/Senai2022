@@ -50,7 +50,7 @@ FOR EACH ROW
 
 
 
-LOAD DATA INFILE 'D:/Gabriel Alves/Senai2022/2DES/BD/Aula 06/emprestimos/docs/clientes.csv'
+LOAD DATA INFILE 'D:/Gabriel Alves/Senai2022/2DES/BD/Aula 6/emprestimos/docs/clientes.csv'
 INTO TABLE clientes
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
@@ -59,7 +59,7 @@ IGNORE 1 ROWS;
 
 select * from clientes;
 
-LOAD DATA INFILE 'D:/Gabriel Alves/Senai2022/2DES/BD/Aula 06/emprestimos/docs/telefones.csv'
+LOAD DATA INFILE 'D:/Gabriel Alves/Senai2022/2DES/BD/Aula 6/emprestimos/docs/telefones.csv'
 INTO TABLE telefones
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
@@ -68,7 +68,7 @@ IGNORE 1 ROWS;
 
 select * from telefones;
 
-LOAD DATA INFILE 'D:/Gabriel Alves/Senai2022/2DES/BD/Aula 06/emprestimos/docs/emprestimos.csv'
+LOAD DATA INFILE 'D:/Gabriel Alves/Senai2022/2DES/BD/Aula 6/emprestimos/docs/emprestimos.csv'
 INTO TABLE emprestimos
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
