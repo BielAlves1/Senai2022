@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { View, StyleSheet, TextInput } from 'react-native';
 
 export default function Home() {
     const chamados = [
@@ -40,19 +40,28 @@ export default function Home() {
 
     return(
         <View style={style.container}>
-            {
-                
-            }
+            <TextInput style={style.inputzao} placeholder='Filtrar' />
+            
         </View>
     )
 }
 
 const style = StyleSheet.create({
     container: {
-        flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        width: '100%',
-        backgroundColor: 'rgb(88, 170, 233)'
-    }
+        width: '100%'
+    },
+    inputzao: {
+        marginTop: '20px',
+        height: '50px',
+        width: '75%',
+        backgroundColor: 'white',
+        borderRadius: '15px',
+        boxShadow: '1px 1px #7242F5',
+        padding: '20px',
+        fontWeight: 'bold',
+        fontSize: "20px",
+        color: '#7242F5'
+      }
 });

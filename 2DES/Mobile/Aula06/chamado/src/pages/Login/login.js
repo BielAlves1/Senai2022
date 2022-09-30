@@ -66,6 +66,7 @@ const style = StyleSheet.create({
         width: '75%',
         backgroundColor: 'white',
         borderRadius: '15px',
-        boxShadow: '1px 1px #7242F5'
+        boxShadow: '1px 1px #7242F5',
+        padding: '20px'
       }
   });
