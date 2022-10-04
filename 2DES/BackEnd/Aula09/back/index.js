@@ -1,13 +1,13 @@
-const Express = require('express');
+const express = require('express');
 const cors = require('cors');
 
-const routes = require('./src/routes.js');
+const itens = require('./src/routes/itens');
 
-const app = Express();
-app.use(Express.json());
+const app = express();
+app.use(express.json());
 app.use(cors());
-app.use(routes);
+app.use(itens);
 
-app.listen(5000, () => {
-    console.log("Alô Corno");
+app.listen(3000, () => {
+    console.log("Respondendo na porta 3000");
 });

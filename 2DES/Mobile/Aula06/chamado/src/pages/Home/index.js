@@ -1,7 +1,7 @@
-import { View, StyleSheet, TextInput } from 'react-native';
+import { View, StyleSheet, TextInput, Text } from 'react-native';
 
 export default function Home() {
-    const chamados = [
+    const requisicoes = [
         {
             "user_id": 1,
             "chamados": [
@@ -41,7 +41,16 @@ export default function Home() {
     return(
         <View style={style.container}>
             <TextInput style={style.inputzao} placeholder='Filtrar' />
-            
+            {
+                requisicoes.map((chama, index) => {
+                    return(
+                        <View key={index}>
+                            <Text style={style.title}>{chama.titulo}</Text>
+                            <Text style={style.desc}>{chama.descricao}</Text>
+                        </View>
+                    )
+                })
+            }
         </View>
     )
 }
