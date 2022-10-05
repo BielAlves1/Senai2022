@@ -14,7 +14,7 @@ CREATE TABLE veiculos(
     modelo varchar(30) not null,
     cor varchar(15) not null,
     cpf varchar(14) not null,
-    foreign key(cpf) references clientes(cpf)
+    foreign key(cpf) references clientes(cpf) on delete cascade
 );
 
 CREATE TABLE vagas(
@@ -24,7 +24,7 @@ CREATE TABLE vagas(
     valor_hora float(10,2) not null
 );
 
-CREATE TABLE controle (
+CREATE TABLE processa_vaga(
     id_vaga integer not null,
     placa varchar(7) not null,
     entrada DATETIME not null,
@@ -36,4 +36,4 @@ CREATE TABLE controle (
 select * from clientes;
 select * from veiculos;
 select * from vagas;
-select * from controle;
+select * from processa_vaga;
