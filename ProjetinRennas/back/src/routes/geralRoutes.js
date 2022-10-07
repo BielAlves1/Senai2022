@@ -14,7 +14,7 @@ router.post("/estacionamento/geral", Geral.createGeral);
 
 router.put("/estacionamento/geral", Geral.updateGeral);
 
-router.delete("/estacionamento/:cpf", Geral.deleteGeral);
+router.delete("/estacionamento/geral/:cpf", Geral.deleteGeral);
 
 
 module.exports = router;

@@ -9,16 +9,16 @@ const createGeral = (req, res) => {
             con.query(Veiculo.toCreate(req.body), (err, result) => {
                 if (err == null){
                     con.query(ProcessaV.toCreate(req.body), (err, result) => {
-                        if (err == null){
-                            if (err.sqlState == 23000)//Se o cpf já está cadastrado
-                                res.status(406).json(err).end();
-                            else
-                                res.status(500).json(err).end();
-                        }
+                        if (err == null)
+                            res.status(201).end();
                     }); 
                 }
             });
-        }
+        } else
+            if (err.sqlState == 23000)//Se o CPF já está cadastrado
+                res.status(406).json(err).end();
+            else
+                res.status(500).json(err).end();
     });
 }
 
@@ -29,17 +29,17 @@ const updateGeral = (req, res) => {
                 if (err == null){
                     con.query(ProcessaV.toUpdate(req.body), (err, result) => {
                         if (err == null){
-                            if (result[1].affectedRow == 0)
-                                res.status(400).end();
-                            else
-                                res.status(201).end();
+                            if (result.affectedRows > 0)
+                                res.status(204).end();
+                             else
+                                res.status(404).end();
                         }
                     }); 
                 }
             });
         }
         else
-        res.status(500).json(err).end();
+        res.status(400).json(err).end();
     });
 }
 
