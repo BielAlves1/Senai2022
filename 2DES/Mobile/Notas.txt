@@ -24,3 +24,8 @@ https://reactnavigation.org/      <= Link para o site reactnavigation e utilizar
 - npm i -g yarn
 - npx expo install react-native-web@~0.18.7 react-dom@18.0.0 @expo/webpack-config@^0.17.0
 
+Comandos para instalar os componentes para navegação:
+- yarn add @react-navigation/native
+- yarn add react-native-screens react-native-safe-area-context
+- yarn add @react-navigation/native-stack
+
