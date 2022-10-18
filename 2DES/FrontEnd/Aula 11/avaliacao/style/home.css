@@ -1,0 +1,14 @@
+@import url('../global/global.css');
+.content h2 {
+    margin: 2%;
+}
+
+.text{
+    margin-top: 2%;
+    margin-left: 3%;
+}
+
+.text2{
+    text-decoration-line: underline;
+    margin-left: 3%;
+}

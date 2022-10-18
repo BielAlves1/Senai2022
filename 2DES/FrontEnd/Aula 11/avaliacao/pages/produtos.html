@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/prod.css">
+    <title>Produtos</title>
+</head>
+
+<body onLoad="loadItens()">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="./home.html">Home</a></li>
+                <li><a href="./produtos.html">Produtos</a></li>
+            </ul>
+        </nav>
+        <div class="profile">
+            <p>User Name</p>
+            <img src="../../docs/assets/avatar.png" alt="perfil">
+        </div>
+    </header>
+
+    <button id="cadastrar">Cadastrar</button>
+
+    <div class="container">
+        <table >
+            <tbody id="tbody">
+                <tr class="info model">
+                    <td><img src="" alt="prod"></th>
+                    <td id="id"></th>
+                    <td id="ni"></th>
+                    <td id="aquisicao"></th>
+                    <td id="denominacao"></th>
+                    <td id="valor"></th>
+                    <td><img src="" alt="excluir"></th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="modal model">
+        <div class="modal-content">
+            <div class="modal-content-header">
+                <h3>Novo Lançamento</h3>
+                <button onClick="fecharModal()" class="btFechar">X</button>
+            </div>
+            <div class="modal-content-body">
+                <input type="text" id="descricao" placeholder="Digite a Descrição">
+                <select id="selectTipo" name="Tipo">
+                    <option id="idD" value="D">Saída</option>
+                    <option id="idC" value="C">Entrada</option>
+                  </select>
+                <input type="number" id="valor" placeholder="Digite o Valor">
+            </div>
+            <div class="modal-content-footer">  
+                <button onClick="cadastrarLancamento()" class="btEnviar">Enviar</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../scripts/script.js"></script>
+</html>
