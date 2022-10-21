@@ -17,28 +17,29 @@
     <div class="container">
         <div class="item-user model">
             <div class="content">
-                <p></p>
-                <p></p>
-                <p></p>
-                <p></p>
+                <p id="nome"></p>
+                <p id="login"></p>
+                <p id="nascimento"></p>
+                <p id="telefone"></p>
             </div>
             <img id="imgUser" src="" alt="User">
+            <img id="excluir" src="https://cdn-icons-png.flaticon.com/512/5704/5704584.png" alt="">
         </div>
     </div>
 
     <div class="modal" id="modal">
         <form action="http://localhost:5000/usuario" method="post" enctype="multipart/form-data" id="form">
             <div class="form">
-                <div class="modalHeader">Cadastro de Usuario<button
-                        onclick="modal.setAttribute('style','display:none');">x</button></div>
+                <div class="modalHeader">Cadastro de Usuário<button onclick="modal.setAttribute('style','display:none');">x</button></div>
                 <input type="text" id="nome" name="nome" placeholder="Nome" required/>
-                <textarea id="ingredientes" name="ingredientes" placeholder="Ingredientes" required></textarea>
-                <textarea id="modo_preparo" name="modo_preparo" placeholder="Modo de preparo" required></textarea>
+                <input type="text" id="login" name="login" placeholder="Login" required/>
+                <input type="text" id="nascimento" name="nascimento" placeholder="nascimento" required/>
+                <input type="text" id="telefone" name="telefone" placeholder="telefone" required/>
                 <input type="file" id="foto" name="foto" />
                 <button type="submit">Enviar</button>
             </div>
         </form>
     </div>
 </body>
-<script src="receitas.js"></script>
+<script src="script.js"></script>
 </html>

@@ -1,8 +1,7 @@
-const uri = 'http://localhost:4500/receitas';
-const receitas = document.querySelector("#receitas");
+const uri = 'http://localhost:5000/usuarios';
 var dados = [];
 
-function carregar() {
+function load() {
     const options = { method: 'GET' };
     fetch(uri, options)
         .then(resp => resp.json())
@@ -15,27 +14,17 @@ function carregar() {
 
 function montarCards() {
     dados.forEach(e => {
-        let card = document.createElement("div");
-        let id = document.createElement("div");
-        let tipo = document.createElement("div");
-        let nome = document.createElement("div");
-        let ingredientes = document.createElement("div");
-        let modoPreparo = document.createElement("div");
-        let foto = document.createElement("img");
-        card.setAttribute('class', 'card');
-        id.innerHTML = `<h4>Id: ${e.id}</h4> <button onclick='excluirReceita(${e.id})'>-</button>`;
-        tipo.innerHTML = `<b>Tipo:</b> ${e.tipo}`;
-        nome.innerHTML = `<b>Nome:</b> ${e.nome}`;
-        ingredientes.innerHTML = `<b>Ingredientes:</b> ${e.ingredientes}`;
-        modoPreparo.innerHTML = `<b>Modo de Preparo:</b> ${e.modo_preparo}`;
-        foto.setAttribute('src', montaImg(e.foto));
-        card.appendChild(id);
-        card.appendChild(tipo);
-        card.appendChild(nome);
-        card.appendChild(ingredientes);
-        card.appendChild(modoPreparo);
-        card.appendChild(foto);
-        receitas.appendChild(card);
+        let card = document.querySelector(".item-user").cloneNode(true);
+        card.classList.remove('model');
+
+        card.querySelector("#nome").innerHTML += e.nome;
+        card.querySelector("#login").innerHTML += e.login;
+        card.querySelector("#nascimento").innerHTML += e.nascimento;
+        card.querySelector("#telefone").innerHTML += e.telefone;
+        card.querySelector("#imgUser").src = montaImg(e.avatar);
+        card.querySelector("#excluir").innerHTML = `<img onClick='excluirReceita(${e.id})' />`;
+
+        document.querySelector(".container").appendChild(card);
     });
 }
 
@@ -46,10 +35,10 @@ function montaImg(img) {
         return `./default.png`;
 }
 
-function excluirReceita(id) {
-    if (confirm("Confirma a exclusão da receita id: " + id)) {
+function excluirUser(login) {
+    if (confirm("Confirma a exclusão do Usuário: " + login)) {
         const body = {
-            "id": id
+            "id": login
         }
         const options = {
             method: 'DELETE',

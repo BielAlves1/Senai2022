@@ -5,7 +5,7 @@ const Usuario = require("./controllers/UsuariosController");
 
 router.get("/usuarios", Usuario.listarUsuarios);
 router.post("/usuario", Usuario.cadastrarUsuario);
-router.update("/usuario", Usuario.alterarUsuario);
+router.put("/usuario", Usuario.alterarUsuario);
 router.delete("/usuario", Usuario.excluirUsuario);
 
 module.exports = router;
