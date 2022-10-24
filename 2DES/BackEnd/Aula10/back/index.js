@@ -1,13 +1,19 @@
+require('dotenv').config();
+const PORT = process.env.PORT || 3000
 const express = require('express');
 const cors = require('cors');
 
-const routes = require('./src/routes.js');
-const app = express();
+let corsOptions = {
+    origin: [ 'http://localhost:5500', 'http://localhost:3000', 'http://127.0.0.1:5500' ]
+};
 
-app.use(express.json());
-app.use(cors());
-app.use(routes);
+const usuarios = require('./src/routes/usuario.route');
 
-app.listen(5000, () => {
-    console.log("Alô Corno");
+const app = express()
+    .use(express.json())
+    .use(cors(corsOptions))
+    .use('/usuarios/', usuarios);
+
+app.listen(PORT, () => {
+    console.log('Servidor em execução na porta ' + PORT);
 });
