@@ -6,9 +6,26 @@
 . Abrir o terminal cmd;
 - npm i -g expo-cli
 ou - npm i -g react-native expo-cli
-- expo init nomeDoProjeto
 
 ------------
+
+- expo init nomeDoProjeto
+- cd nomeDoProjeto
+
+https://reactnavigation.org/      <= Link para o site reactnavigation e utilizar os comandos de instalação dos componentes para navegação abaixo.
+Comandos para instalar os componentes para navegação:
+- yarn add @react-navigation/native
+- yarn add react-native-screens react-native-safe-area-context
+- yarn add @react-navigation/native-stack
+
+Caso dê problema que o yarn não está instalado, utilizar o comando:
+- npm i -g yarn
+
+Se não resolver, tentar:
+- npx expo install react-native-web@~0.18.7 react-dom@18.0.0 @expo/webpack-config@^0.17.0
+
+E volte a instalar os comandos de instalação dos componentes de navegação com o 'yarn'.
+
 !! ATENÇÃO !!
 
 Para compilar o programa, através do terminal no visual code, necessário estar na pasta do projeto e dar o comando:
@@ -20,12 +37,4 @@ Para rodar direto no navegador.
 Caso dê problema, utilizar o comando:
 -npm i --force --web
 
-https://reactnavigation.org/      <= Link para o site reactnavigation e utilizar os comandos de instalação
-- npm i -g yarn
-- npx expo install react-native-web@~0.18.7 react-dom@18.0.0 @expo/webpack-config@^0.17.0
-
-Comandos para instalar os componentes para navegação:
-- yarn add @react-navigation/native
-- yarn add react-native-screens react-native-safe-area-context
-- yarn add @react-navigation/native-stack
 
