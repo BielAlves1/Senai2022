@@ -4,11 +4,13 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function Historico() {
     const [registro, setRegistro] = useState([]);
+    const [busca, setBusca] = useState("");
 
     const read = async () => {
         try {
             let registros = await AsyncStorage.getItem("registro");
-            setRegistro(JSON.parse(registros));
+
+            if (registros !== null) setRegistro(JSON.parse(registros));
         } catch (err) {
             console.log(err);
         }
@@ -21,18 +23,18 @@ export default function Historico() {
         <View style={style.container}>
             <ScrollView>
                 <View style={style.content}>
-                <TextInput style={style.inputzin} placeholder='Digite para buscar...' placeholderTextColor={"#00000077"} />
+                <TextInput style={style.inputzin} placeholder='Digite para buscar...' placeholderTextColor={"#00000077"} onChangeText={(val) => { setBusca(val) }}   />
                     {
                         registro.map((info, index) => {
-                            return (
-                                <View style={style.regis} key={index}>
-                                    <Text style={style.text}>PET: {info.nomePet}</Text>
-                                    <Text style={style.text}>Veterinário: {info.nomeVet}</Text>
-                                    <Text style={style.text}>Vacina: {info.vacina}</Text>
-                                    <Text style={style.text}>Data: {info.data}</Text>
-                                </View>
-                                )
-                            })
+                                return (
+                                    <View style={style.regis} key={index}>
+                                        <Text style={style.text}>PET: {info.pet}</Text>
+                                        <Text style={style.text}>Veterinário: {info.vet}</Text>
+                                        <Text style={style.text}>Vacina: {info.vacina}</Text>
+                                        <Text style={style.text}>Data: {info.data}</Text>
+                                    </View>
+                                    )
+                                })
                     }
                 </View>
             </ScrollView>

@@ -36,9 +36,9 @@ export default function Registro({ navigation }) {
         data
     }
 
-    const Registrar = async (value) => {
+    const Registrar = async () => {
         try {
-            let info = await AsyncStorage.getItem("historico");
+            let info = await AsyncStorage.getItem("registro");
             if(info !== null) {
                 info = JSON.parse(info);
                 info.push(form);
@@ -46,7 +46,7 @@ export default function Registro({ navigation }) {
                 info = new Array(form);
             }
 
-            await AsyncStorage.setItem("historico", JSON.stringify(info));
+            await AsyncStorage.setItem("registro", JSON.stringify(info));
 
             navigation.navigate("Historico")
         }catch(e) {
