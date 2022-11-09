@@ -45,6 +45,28 @@ li a:hover::after{
     width:100%;
 }
 
+ul li .btn-cad{
+    padding: 0 20px;
+    text-decoration: none;
+    color:rgb(66, 65, 65);
+    display: inline-block;
+    font-size: 19px;
+}
+
+li .btn-cad::after {
+    content: '';
+    display: block;
+    height: 4px;
+    border-radius: 10px;
+    width: 0;
+    background: rgb(162, 221, 147);
+    transition:all .6s;
+}
+
+li .btn-cad:hover::after{
+    width:100%;
+}
+
 main{
     display:flex;
     height: 100%;
@@ -61,14 +83,6 @@ table > tbody > tr > td {
     width: 20px;
 }
 
-button {
-    background: none;
-    border: none;
-}
-
-button:hover {
-    cursor: pointer;
-}
 
 #content{
     margin-top: 10px;
@@ -96,3 +110,7 @@ button:hover {
     background-color: #354ebe;
     color: white;
   }
+
+  
+
+

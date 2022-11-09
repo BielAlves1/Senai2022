@@ -64,11 +64,11 @@ insert into vagas values
 (default, 1, "Carro Sol",15);
 
 insert into processa_vagas values
-('48487609090', 'ACA1A22', 1, date_add(now(),interval - 5 hour), default),
-('08587639534', 'ABB1A11', 3, date_add(now(),interval - 2 hour), default),
-('34535605823', 'ACA1A32', 4, date_add(now(),interval - 2 hour), default),
-('45644609378', 'BCA1A55', 6, date_add(now(),interval - 1 hour), default),
-('02387210014', 'AAC1A34', 7, date_add(now(),interval - 6 hour), default);
+('48487609090', 'ACA1A22', 1, curdate(), default),
+('08587639534', 'ABB1A11', 3, curdate(), default),
+('34535605823', 'ACA1A32', 4, curdate(), default),
+('45644609378', 'BCA1A55', 6, curdate(), default),
+('02387210014', 'AAC1A34', 7, curdate(), default);
 
 select * from clientes;
 select * from veiculos;
@@ -83,4 +83,3 @@ join processa_vagas pv
 on v.placa  = pv.placa;
 
 select * from vw_geral;
-

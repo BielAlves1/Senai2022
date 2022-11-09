@@ -18,7 +18,7 @@
         <nav>
             <ul>
                 <li><a href="../index.html">Home</a></li>
-                <li><a href="../Clientes">Clientes</a></li>
+                <li><a href="../Clientes">Horarios</a></li>
                 <li><a href="../Vagas">Veiculos</a></li>
                <li><button  class="btn-cad" onclick="modal1.setAttribute('style','display:flex')">Cadastrar</button></li>
             </ul>
@@ -37,8 +37,7 @@
                     <th>Modelo</th>
                     <th>Cor</th>
                     <th>Vaga</th>
-                    <th>Hora de Entrada</th>
-                    <th>Hora de Saida</th>
+                    
                 </tr>
             </thead>
             <tbody id="lista">
@@ -48,7 +47,7 @@
         <div id="modal1" class="modal">
             <div id="novo">
                 <div class="modalHeader">
-                    <h3>Criar Novo Lançamento</h3>
+                    <h3>Criar Novo Cliente</h3>
                     <button onclick="modal1.setAttribute('style','display:none')">X</button>
                 </div>
                 <div class="modalForm">
@@ -68,10 +67,7 @@
                     <input type="text" id="cor" />
                     ID da Vaga:
                     <input type="text" id="id_vaga" />
-                    Data Entrada:
-                    <input type="text" id="entrada" />
-                    Hora Saida:
-                    <input type="text" id="saida" />
+                    
                 </div>
                 <div class="modalFooter">
                     <button class="bn" onclick="cadastrarCliente()">Enviar</button>
@@ -91,7 +87,7 @@
         <div id="modalExcluir" class="modall excluir">
             <h3>Exclusão de cliente<input type="button" value="X" onclick="window.location.reload()"> </h3>
             <p>Atenção! Tem certeza que deseja excluir o Cliente <label id="cpfExclui"></label>? Essa ação não poderá ser desfeita.</p>
-            <button id="confirmaExclusao" onclick="excluir(cpfExclui.innerHTML)">Excluir</button>
+            <button id="confirmaExclusao" onclick="excluir(cpfExclui.inner)">Excluir</button>
         </div>
 
        

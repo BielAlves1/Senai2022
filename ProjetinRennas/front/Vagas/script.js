@@ -1,4 +1,6 @@
-const uri = 'http://localhost:5000/estacionamento/geral';
+//VEICULOS
+
+const uri = 'http://localhost:5000/estacionamento/veiculos';
 const lista = document.querySelector("#lista");
 var data = [];
 
@@ -35,4 +37,3 @@ function preecherTabela() {
         lista.appendChild(l);
     });
 }
-
