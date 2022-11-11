@@ -4,6 +4,8 @@ const del = '/estacionamento/cliente/cpf';
 const lista = document.querySelector("#lista");
 const mExcluir = document.querySelector("#modalExcluir");
 const labelCpf = document.querySelector("#cpfExclui");
+const btCad = document.querySelector(".bn");
+btCad.addEventListener("click", validarPlaca, validarCPF);
 var data = [];
 
 function carregar() {
@@ -63,7 +65,7 @@ function preparaExclusao(cpf) {
 
 
 function excluir(cpf) {
-    const options = {method: 'DELETE'};
+    const options = {"method": 'DELETE'};
 
 fetch('http://localhost:5000/estacionamento/cliente/' + cpf, options)
   .then(response => response.json())
@@ -209,6 +211,45 @@ function cadastrarCliente() {
 //         alerta('Preencha os campos obrigatórios');
 //     }
 }
+}
+
+function validarPlaca(placa){
+    placa = document.querySelector("#placa");
+    let validando = false;
+    let textArea = document.querySelector("#placaRes");
+    const regexPlacaAntiga = /^[a-zA-Z]{3}[0-9]{4}$/;
+    const regexPlacaNova = /^[a-zA-Z]{3}[0-9]{1}[a-zA-Z]{1}[0-9]{2}$/;
+
+    if(regexPlacaAntiga.test(placa.value)){
+        textArea.innerHTML = (validando = true);
+    }else if(regexPlacaNova.test(placa.value)){
+        textArea.innerHTML = (validando = true);
+    }else{
+        textArea.innerHTML = (validando = false);
+    }
+}
+
+function validarCPF(cpf){
+    cpf = document.querySelector("#cpf");
+    let textArea = document.querySelector("#cpfRes");
+
+    cpf = cpf.value.replace(/\D/g, '');
+    if(cpf.toString().length != 11 || /^(\d)\1{10}$/.test(cpf)) return false;
+    var validando = true;
+    [9,10].forEach(function(j){
+        var soma = 0, r;
+        cpf.split(/(?=)/).splice(0,j).forEach(function(e, i){
+            soma += parseInt(e) * ((j+2)-(i+1));
+        });
+        r = soma % 11;
+        r = (r <2)?0:11-r;
+        if(r != cpf.substring(j, j+1)) validando = false;
+    });
+    if(validando == true ){
+        textArea.innerHTML = true;
+    }else{
+        textArea.innerHTML = false;
+    }
 }
 
 function alerta(a) {

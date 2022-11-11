@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #04558A;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    margin-top: 5%;
+    margin-left: 2%;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 25px;
+    grid-row-gap: 25px;
+}
+
+.card {
+    background-color: #ffffff;
+    height: 250px;
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px rgb(46, 46, 46);
+    cursor: pointer;
+}
+
+.card:hover{
+    box-shadow: 5px 5px 5px #5e9bc6;
+}
+
+#imgExcluir{
+    margin-bottom: 48%;
+    margin-right: 40%;
+    height: 35px;
+    width: 35px;
+}
+
+#imgSalgas {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+}
+
+.model {
+    visibility: hidden;
+    display: none;
+}
