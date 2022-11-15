@@ -46,10 +46,10 @@ insert into clientes values
 
 insert into veiculos values
 ('ABB1A11', 'Moto', 'Honda','Vermelha', '48487609090'),
-('ACA1A22', 'Carro', 'FIESTA','Preto', '08587639534'),
+('ABA6A21', 'Carro', 'FIESTA','Preto', '08587639534'),
 ('ACA1A32', 'Carro', 'COURRIER','Prata', '34535605823'),
 ('AAC1A34', 'Moto', 'Suzuki','Azul', '45644609378'),
-('BCA1A55', 'Carro', 'RANGER','Brancp', '02387210014');
+('BCA1A55', 'Carro', 'RANGER','Branco', '02387210014');
 
 insert into vagas values
 (default, 1, "Carro Sombra",12.5),
@@ -64,11 +64,11 @@ insert into vagas values
 (default, 1, "Carro Sol",15);
 
 insert into processa_vagas values
-('48487609090', 'ACA1A22', 1, curdate(), default),
-('08587639534', 'ABB1A11', 3, curdate(), default),
+('48487609090', 'ABB1A11', 1, curdate(), default),
+('08587639534', 'ABA6A21', 3, curdate(), default),
 ('34535605823', 'ACA1A32', 4, curdate(), default),
-('45644609378', 'BCA1A55', 6, curdate(), default),
-('02387210014', 'AAC1A34', 7, curdate(), default);
+('45644609378', 'AAC1A34', 6, curdate(), default),
+('02387210014', 'BCA1A55', 7, curdate(), default);
 
 select * from clientes;
 select * from veiculos;
