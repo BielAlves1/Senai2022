@@ -18,8 +18,8 @@
         <nav>
             <ul>
                 <li><a href="../index.html">Home</a></li>
-                <li><a href="../Clientes">Horarios</a></li>
-                <li><a href="../Vagas">Veiculos</a></li>
+                <li><a href="../Horarios">Horarios</a></li>
+                <li><a href="../Vagas">Vagas</a></li>
                <li><button  class="btn-cad" onclick="modal1.setAttribute('style','display:flex')">Cadastrar</button></li>
             </ul>
         </nav>
@@ -70,7 +70,7 @@
                     
                 </div>
                 <div class="modalFooter">
-                    <button class="bn" onClick="cadastrarCliente()">Enviar</button>
+                    <button class="bn" onclick="cadastrarCliente()">Enviar</button>
                 </div>
             </div>
         </div>
@@ -85,10 +85,13 @@
         </div>
 
         <div id="modalExcluir" class="modall excluir">
-            <h3>Exclusão de cliente<input type="button" value="X" onclick="window.location.reload()"> </h3>
-            <p>Atenção! Tem certeza que deseja excluir o Cliente <label id="cpfExclui"></label>? Essa ação não poderá ser desfeita.</p>
-            <button id="confirmaExclusao" onclick="excluir(cpfExclui.inner)">Excluir</button>
+            <h3>Exclusão de cliente<input type="button" value="X" onclick="modalExcluir.setAttribute('style','display:none;')"> </h3>
+            <p>Atenção! Tem certeza que deseja excluir o Cliente: <label id="cpfExclui"></label>? Essa ação não poderá ser desfeita.</p>
+            <button id="confirmaExclusao" onclick="excluir(cpfExclui.innerHTML)">Excluir</button>
         </div>
+
+       
+
     </main>
 </body>
 <script src="index.js"></script>

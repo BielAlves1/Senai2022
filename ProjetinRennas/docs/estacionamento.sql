@@ -19,7 +19,7 @@ CREATE TABLE veiculos(
 
 CREATE TABLE vagas(
     id_vaga integer not null primary key auto_increment,
-    status_vaga BIT not null,
+    status_vaga boolean not null,
     descricao varchar(30) not null,
     valor_hora float(10,2) not null
 );
@@ -39,17 +39,17 @@ show tables;
 
 insert into clientes values
 ('48487609090','Sara de Souza Alves', '(19)99934-1234'),
-('08587639534','Evandro Silva', '(19)99678-4321'),
+('98587639534','Evandro Silva', '(19)99678-4321'),
 ('34535605823','Zélia Neto', '(19)99634-8878'),
 ('45644609378','Gilberto Martim', '(19)99849-8662'),
-('02387210014','Xeila Bispo', '(19)99849-8662');
+('92387210014','Xeila Bispo', '(19)99849-8662');
 
 insert into veiculos values
 ('ABB1A11', 'Moto', 'Honda','Vermelha', '48487609090'),
-('ACA1A22', 'Carro', 'FIESTA','Preto', '08587639534'),
+('ACA1A22', 'Carro', 'FIESTA','Preto', '98587639534'),
 ('ACA1A32', 'Carro', 'COURRIER','Prata', '34535605823'),
 ('AAC1A34', 'Moto', 'Suzuki','Azul', '45644609378'),
-('BCA1A55', 'Carro', 'RANGER','Brancp', '02387210014');
+('BCA1A55', 'Carro', 'RANGER','Brancp', '92387210014');
 
 insert into vagas values
 (default, 1, "Carro Sombra",12.5),
@@ -65,10 +65,10 @@ insert into vagas values
 
 insert into processa_vagas values
 ('48487609090', 'ACA1A22', 1, curdate(), default),
-('08587639534', 'ABB1A11', 3, curdate(), default),
+('98587639534', 'ABB1A11', 3, curdate(), default),
 ('34535605823', 'ACA1A32', 4, curdate(), default),
 ('45644609378', 'BCA1A55', 6, curdate(), default),
-('02387210014', 'AAC1A34', 7, curdate(), default);
+('92387210014', 'AAC1A34', 7, curdate(), default);
 
 select * from clientes;
 select * from veiculos;
