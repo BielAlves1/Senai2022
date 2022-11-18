@@ -13,7 +13,7 @@ const toCreate = (model) => {
 const toUpdate = (model) => {
     return `UPDATE vagas SET
             status_vaga = '${model.status_vaga}'
-            WHERE id_vaga='${model.id_vaga}';`
+            WHERE id_vaga='${model.id_vaga}'`;
 }
 
 module.exports = {

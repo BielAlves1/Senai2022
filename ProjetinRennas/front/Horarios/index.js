@@ -26,7 +26,7 @@ function preecherTabela() {
         placa.innerHTML = e.placa;
         id_vaga.innerHTML = e.id_vaga;
         entrada.innerHTML = e.entrada.toLocaleString('pt-BR', { timeZone: 'UTC' }).replace("T", " ").split(".")[0];
-        saida.innerHTML = e.saida
+        saida.innerHTML = e.saida != null ? e.saida.toLocaleString('pt-BR', { timeZone: 'UTC' }).replace("T", " ").split(".")[0] : e.saida;
         l.appendChild(cpf);
         l.appendChild(placa);
         l.appendChild(id_vaga);

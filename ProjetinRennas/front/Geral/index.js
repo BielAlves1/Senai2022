@@ -92,7 +92,7 @@ function cadastrarCliente() {
 
     let id_vaga = document.querySelector("#id_vaga").value
 
-    let corpo = {
+    const corpo = {
         "cpf": cpf,
         "nome": nome,
         "telefone": telefone,
@@ -108,7 +108,7 @@ function cadastrarCliente() {
         "id_vaga": id_vaga
     }
 
-    let options = {
+    const options = {
         "method": "POST",
         "headers": {
             "content-type": "application/json"

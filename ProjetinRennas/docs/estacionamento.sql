@@ -53,22 +53,22 @@ insert into veiculos values
 
 insert into vagas values
 (default, 1, "Carro Sombra",12.5),
-(default, 0, "Carro Sombra",12.5),
 (default, 1, "Carro Sombra",12.5),
 (default, 1, "Carro Sombra",12.5),
-(default, 0, "Carro Sol",10),
-(default, 1, "Preferencial Idoso",10),
+(default, 1, "Carro Sombra",12.5),
 (default, 1, "Carro Sol",10),
-(default, 1, "Preferencial Cadeirante",10),
+(default, 0, "Preferencial Idoso",10),
 (default, 0, "Carro Sol",10),
+(default, 1, "Preferencial Cadeirante",10),
+(default, 1, "Carro Sol",10),
 (default, 1, "Carro Sol",15);
 
 insert into processa_vagas values
-('48487609090', 'ACA1A22', 1, curdate(), default),
-('98587639534', 'ABB1A11', 3, curdate(), default),
-('34535605823', 'ACA1A32', 4, curdate(), default),
-('45644609378', 'BCA1A55', 6, curdate(), default),
-('92387210014', 'AAC1A34', 7, curdate(), default);
+('48487609090', 'ABB1A11', 1, curdate()-2, "2022-11-16 08:30:00"),
+('98587639534', 'ACA1A22', 3, curdate()-2, "2022-11-16 09:00:00"),
+('34535605823', 'ACA1A32', 4, curdate()-3, "2022-11-15 10:00:00"),
+('45644609378', 'AAC1A34', 6, curdate(), default),
+('92387210014', 'BCA1A55', 7, curdate(), default);
 
 select * from clientes;
 select * from veiculos;
