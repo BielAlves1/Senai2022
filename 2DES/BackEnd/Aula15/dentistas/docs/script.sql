@@ -31,7 +31,7 @@ describe profissionais;
 describe consultas;
 describe tratamentos;
 
-LOAD DATA INFILE 'D:/Gabriel Alves/Senai2022/2DES/BackEnd/Aula15/docs/profissionais.csv'
+LOAD DATA INFILE 'D:/Gabriel Alves/Senai2022/2DES/BackEnd/Aula15/dentistas/docs/profissionais.csv'
 INTO TABLE profissionais
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
@@ -40,7 +40,7 @@ IGNORE 1 ROWS;
 
 select * from profissionais;
 
-LOAD DATA INFILE 'D:/Gabriel Alves/Senai2022/2DES/BackEnd/Aula15/docs/consultas.csv'
+LOAD DATA INFILE 'D:/Gabriel Alves/Senai2022/2DES/BackEnd/Aula15/dentistas/docs/consultas.csv'
 INTO TABLE consultas
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
@@ -49,7 +49,7 @@ IGNORE 1 ROWS;
 
 select * from consultas;
 
-LOAD DATA INFILE 'D:/Gabriel Alves/Senai2022/2DES/BackEnd/Aula15/docs/tratamentos.csv'
+LOAD DATA INFILE 'D:/Gabriel Alves/Senai2022/2DES/BackEnd/Aula15/dentistas/docs/tratamentos.csv'
 INTO TABLE tratamentos
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'

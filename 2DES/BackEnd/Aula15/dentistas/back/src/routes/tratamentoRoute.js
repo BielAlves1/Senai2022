@@ -3,9 +3,9 @@ const router = express.Router();
 
 const Tratamento = require("../controllers/TratamentoController");
 
-router.get("/dentista/tratamento", Tratamento.listarTratamento);
-router.post("/dentista/tratamento", Tratamento.cadastrarTratamento);
-router.put("/dentista/tratamento", Tratamento.alterarTratamento);
-router.delete("/dentista/tratamento/:id_trata", Tratamento.excluirTratamento);
+router.get("/tratamentos/read", Tratamento.listarTratamento);
+router.post("/tratamentos/create", Tratamento.cadastrarTratamento);
+router.put("/tratamentos/update", Tratamento.alterarTratamento);
+router.delete("/tratamentos/delete/:id_trata", Tratamento.excluirTratamento);
 
 module.exports = router;

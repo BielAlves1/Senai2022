@@ -3,6 +3,6 @@ const router = express.Router();
 
 const Consulta = require("../controllers/ConsultaController");
 
-router.get("/dentista/consulta", Consulta.listarConsulta);
+router.get("/consultas/read", Consulta.listarConsulta);
 
 module.exports = router;
