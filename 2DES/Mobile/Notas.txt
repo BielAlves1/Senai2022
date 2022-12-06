@@ -18,11 +18,17 @@ Comandos para instalar os componentes para navegação:
 - yarn add react-native-screens react-native-safe-area-context
 - yarn add @react-navigation/native-stack
 
-Comandos para instalar os componentes para usar RadioButton:
+Comando para instalar os componentes para usar RadioButton:
 - yarn add react-native-paper@5.0.0-rc.8
 
-Comandos para instalar os componentes do async storage:
+Comando para instalar os componentes do async storage:
 - yarn add @react-native-async-storage/async-storage
+
+Comando para instalar BottomTabsNavigation:
+- yarn add @react-navigation/bottom-tabs
+
+Comando para instalar icons pro TabBottomNavigation:
+- yarn add @react-navigation/material-bottom-tabs react-native-paper react-native-vector-icons
 
 Caso dê problema que o yarn não está instalado, utilizar o comando:
 - npm i -g yarn
