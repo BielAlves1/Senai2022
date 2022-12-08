@@ -8,7 +8,7 @@ create table funcionarios(
     especialidade varchar(30) not null
 );
 
-create table ordemServico(
+create table os(
     id_Os integer primary key auto_increment,
     id_func integer not null,
     descricao varchar(100) not null,
@@ -17,7 +17,7 @@ create table ordemServico(
 );
  
 describe funcionarios;
-describe ordemServico;
+describe os;
 
 show tables;
 
@@ -27,7 +27,7 @@ insert into funcionarios values
 (default, 'Fabiana', 'Pintor/(a)'),
 (default, 'Ivana', 'Eletricista/(a)');
 
-insert into ordemServico values
+insert into os values
 (default, 1, 'Concertar Chuveiro', 50),
 (default, 1, 'Torneira Pingando', 50),
 (default, 1, 'Vazamento no Banheiro', 300),
@@ -37,5 +37,5 @@ insert into ordemServico values
 (default, 4, 'Trocar resistência do chuveiro', 50);
 
 select * from funcionarios;
-select * from ordemServico;
+select * from os;
 
