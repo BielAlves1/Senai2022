@@ -9,10 +9,12 @@ ou - npm i -g react-native expo-cli
 
 ------------
 
+
 - expo init nomeDoProjeto
 - cd nomeDoProjeto
 
 https://reactnavigation.org/      <= Link para o site reactnavigation e utilizar os comandos de instalação dos componentes para navegação abaixo.
+
 Comandos para instalar os componentes para navegação:
 - yarn add @react-navigation/native
 - yarn add react-native-screens react-native-safe-area-context
@@ -30,6 +32,13 @@ Comando para instalar BottomTabsNavigation:
 Comando para instalar icons pro TabBottomNavigation:
 - yarn add @react-navigation/material-bottom-tabs react-native-paper react-native-vector-icons
 
+Comandos para instalar as dependências do Drawer(menu lateral):
+- yarn add @react-navigation/drawer
+- yarn add react-native-gesture-handler react-native-reanimated
+OBS: o react-native-reanimated dá um problema de versão, caso dê erro digite os seguintes comandos:
+- yarn remove react-native-reanimated
+- yarn add react-native-reanimated@~2.9.1
+
 Caso dê problema que o yarn não está instalado, utilizar o comando:
 - npm i -g yarn
 
@@ -37,6 +46,9 @@ Se não resolver, tentar:
 - npx expo install react-native-web@~0.18.7 react-dom@18.0.0 @expo/webpack-config@^0.17.0
 
 E volte a instalar os comandos de instalação dos componentes de navegação com o 'yarn'.
+
+
+
 
 !! ATENÇÃO !!
 
