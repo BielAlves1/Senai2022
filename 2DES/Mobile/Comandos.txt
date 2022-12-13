@@ -61,4 +61,8 @@ Para rodar direto no navegador.
 Caso dê problema, utilizar o comando:
 -npm i --force --web
 
+Quando quiser trabalhar com o mesmo projeto em máquinas diferentes, o primeiro comando q deve usar na segunda máquina
+onde foi clonado o repositório do projeto:
+- yarn install
+
 
