@@ -73,7 +73,7 @@ footer {
 }
 
 .modal-content {
-    width: 350px;
+    width: 50%;
     background-color: #FFF;
     border-radius: 20px;
     position: relative;

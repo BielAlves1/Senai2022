@@ -82,25 +82,50 @@ main{
     color: white;
   }
 
-  .model {
+.model {
     display: none;
-    flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.5);
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0px;
-    left: 0px;
+    visibility: hidden;
+}
+.modal{
+    top: 0;
+    left: 0;
+    display: flex;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,.5);
     align-items: center;
+    justify-content: center;
+}
+
+#novo {
+    height: 600px;
+    width: 30%;
+    background-color: #FFF;
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 40px;
+}
+
+#novo input{
+    border: solid 1px #ccc;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 2px;
+    outline:none;
+    
 }
 
 .modalHeader {
+    top:0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 5px;
-    box-shadow: 0px 1px 5px rgb(36, 85, 158);
+    box-shadow: 0px 1px 5px rgb(53, 54, 54);
+    border-radius: 15px;
 }
 
 .modalHeader button {
@@ -115,52 +140,111 @@ main{
 
 .modalForm{
     width: 100%;
-    display: grid;
-    grid-template-columns: 30% 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.modalForm > label{
+    font-weight: bold;
+    margin-top: 10%;
+}
+
+.opcoes{
+    margin-top: 10%;
+    display: flex;
+    flex-direction: row;
+}
+.tipo{
+    display: flex;
+    flex-direction: column;
+}
+.severidade{
+    display: flex;
+    flex-direction: column;
+}
+.text{
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
 }
 
 .modalFooter{
     display: flex;
-    flex-direction: column;
     align-items: center;
     margin: 10px;
 }
 
-.modalFooter .bn {
-    padding: 8px;
-    padding-left: 12px;
-    padding-right: 12px;  
-    margin: 4px;
-    width: 40%;
-    height: 50px;
-    background-color: #eceaeae5;
-    border-radius: 5px;
-    box-shadow: 0px 2px 4px rgb(47, 47, 48);
+.modalFooter{
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+.destino{
+    display: flex;
+    flex-direction: column;
 }
 
-#novo {
-    display: block;
-    position: relative;
-    width: 450px;
-    top: 250px;
-    padding: 25px;
+.btEnviar{
+    width: 200px;
+    height: 60px;
+    background: #04558a;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 5px 5px 5px rgb(48, 48, 48);
+    margin-left: 15%;
+}
+
+.btEnviar:hover {
+    box-shadow: 5px 5px 5px #1d7ab8;
+    cursor: pointer;
+}
+
+.modal2{
+    display:none;
+    position:absolute;
     background-color: #fff;
-    box-shadow: 2px 2px 5px black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: medium;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: space-between;
+    border: solid 1px #35797d;
+    box-shadow: 1px 1px #888;
 }
 
-#novo input{
-    border: solid 1px #ccc;
-    padding: 5px;
-    border-radius: 5px;
-    margin-top: 5px;
-    margin-bottom: 2px;
-    outline:none;
-    
+.modal2 h3{
+    color: #35797d;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
-#novo .pl{
-    border: solid 1px #ccc;
-    padding: 5px;
-    border-radius: 5px;
-    margin-top: 10px;
+.modal2 input{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: large;
+    font-weight: bold;
+    color: #35797d;
+    background: none;
+    border: none;
 }
+
+.modal2 button{
+    width: 120px;
+    height: 40px;
+    color: #fff;
+    background-color: #f00;
+    border-radius: 10px;
+    box-shadow: 2px 2px #888;
+    margin-left: 0px;
+}
+
+.excluir{
+    width: 550px;
+    height: 200px;
+    top:30%;
+    left:30%;
+}
+

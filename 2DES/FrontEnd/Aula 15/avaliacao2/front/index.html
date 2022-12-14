@@ -13,7 +13,7 @@
             <img src="./assets/logo.png" alt="LOGO">
             <span>Chamados</span>
         </div>
-        <button id="btCriar" onClick="Criar">Criar Chamado</button>
+        <button id="btCriar" onClick="showModal()">Criar Chamado</button>
     </header>
     <main>
         <table id="tabela">
@@ -34,41 +34,61 @@
             <tbody>
             </tbody>
         </table>
-        <div id="modal1" class="model">
+        <div class="modal model">
             <div id="novo">
                 <div class="modalHeader">
                     <h3>Criar Chamado</h3>
-                    <button onclick="modal1.setAttribute('style','display:none')">X</button>
+                    <button onclick="fecharModal()">X</button>
                 </div>
                 <div class="modalForm">
-                    <div class="tipo">
-                        <div class="opcoes">
-                            <input type="checkbox" id="incidente" />
-                            incidente
+                    <div class="opcoes">
+                        <div class="tipo">
+                            <label>Tipo:</label>
+                            <input type="radio" id="rb1" name="a" value="Incidente"/>
+                            <input type="radio" id="rb2" name="a" value="Solicitação"/>
+                            <input type="radio" id="rb3" name="a" value="Mudança"/>
                         </div>
-                    
-                    Nome:
-                    <input type="checkbox" id="nome" />
-                    Telefone:
-                    <input type="checkbox" id="telefone" />
+                        <div class="text">
+                            <p>Incidente</p>
+                            <p>Solicitação</p>
+                            <p>Mudança</p>
+                        </div>
+                        <div class="severidade">
+                            <label>Severidade:</label>
+                            <input type="radio" id="rb4" name="b" value="3"/>
+                            <input type="radio" id="rb5" name="b" value="2"/>
+                            <input type="radio" id="rb6" name="b" value="1"/>
+                        </div>
+                        <div class="text">
+                            <p>3 - Normal</p>
+                            <p>2 - Grave</p>
+                            <p>1 - Urgente</p>
+                        </div>
                     </div>
-
-                    Placa:
-                    <input class="pl" type="checkbox" id="placa" />
-                    Tipo:
-                    <input type="checkbox" id="tipo" />
-                    Modelo:
-                    <input type="checkbox" id="modelo" />
-                    Cor:
-                    <input type="checkbox" id="cor" />
-                    ID da Vaga:
-                    <input type="checkbox" id="id_vaga" />
-                    
-                </div>
+                    <label>Descrição</label>
+                    <textarea name="" id="desc" cols="30" rows="10"></textarea>
                 <div class="modalFooter">
-                    <button class="bn" onclick="cadastrarCliente()">Enviar</button>
+                    <div class="destino">
+                        <label>Destino:</label>
+                        <input type="radio" id="rb7" name="c" value="Suporte"/>
+                        <input type="radio" id="rb8" name="c" value="Almoxerifado"/>
+                        <input type="radio" id="rb9" name="c" value="Financeiro"/>
+                    </div>
+                    <div class="text">
+                        <p>Suporte</p>
+                        <p>Almoxerifado</p>
+                        <p>Financeiro</p>
+                    </div>
+                    <button class="btEnviar" onclick="cadastrarChamado()">Enviar</button>
                 </div>
             </div>
+        </div>
+    </div>
+
+        <div id="modalExcluir" class="modal2 excluir">
+            <h3>Exclusão de Chamado<input type="button" value="X" onclick="modalExcluir.setAttribute('style','display:none;')"> </h3>
+            <p>Atenção! Tem certeza que deseja excluir o Chamado: <label class="invisivel"></label>? Essa ação não poderá ser desfeita.</p>
+            <button id="confirmaExclusao" onclick="excluir(invisivel.innerHTML)">Excluir</button>
         </div>
     </main>
 </body>
